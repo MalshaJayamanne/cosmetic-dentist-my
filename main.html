@@ -1,0 +1,589 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>The Cosmetic Dentists</title>
+
+    // css styling
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    //bootstrap
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <header class="navbar container">
+        <div class="navbar navbar-expand-lg">
+            <div>
+                <ul class="nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#hero">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">PROCESS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">OUR SEVICES</a></li>
+                </ul>
+            </div>
+
+            <div class="navbar-brand mx-auto">
+                <a href="#hero"><img class="logo" src="images/logo.svg"></a>
+            </div>
+
+            <div>
+                <ul class="nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#gallery">SMILE GALLERY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div>
+                <a href="#contact"><button class="btn btn-gold d-none" type="button">Schedule an
+                        appointment</button></a>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero" id="hero">
+            <div class="row">
+                <div class="col-lg-6 hero-image">
+                    <img src="images/hero.jpg">
+                </div>
+
+                <div class="col-lg-6 hero-form">
+                    <div>
+                        <h1>Start Your Smile Transformation Today</h1>
+
+                        <h5 class="hero-txt">Complete the form to request your personalized cosmetic consultation.</h5>
+                    </div>
+                    <div>
+                        <form class="form" id="form" action="#" method="post">
+                            <div class="mb-4 text-center">
+                                <input id="lf-name" type="text" name="name" placeholder="NAME" required>
+                            </div>
+                            <div class="mb-4 text-center">
+                                <input id="lf-email" type="email" name="email" placeholder="EMAIL" required>
+                            </div>
+                            <div class="mb-4 text-center">
+                                <input id="lf-phone" type="tel" name="phone" placeholder="PHONE NUMBER">
+                            </div>
+                            <div class="mb-4 text-center">
+                                <!--<label class="screen-reader-text" for="lf-message">Message</label> -->
+                                <input id="lf-message" type="text" name="message" placeholder="MESSAGE">
+                            </div>
+                            <div>
+                                <button class="btn" type="submit">Schedule an appointment</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="process">
+            <div class="container-fluid">
+                <div class="process-head">
+                    <div class="col-lg-6">
+                        <h2>Our Process</h2>
+                        <h4>Our 3 steps to create the beautiful smile your deserve</h4>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-gold d-none">Schedule an appointment</button>
+                    </div>
+                </div>
+
+
+                <div class="row d-flex gap-3 process-steps">
+                    <article class="step-card">
+                        <div class="col-md-4">
+                            <span class="step-numbering">1</span>
+                            <h3> Consultation &amp; Smile Assessment</h3>
+                            <p>We take the time to undrstand your goals, evaluate your smile, and recommend the
+                                treatment</p>
+                        </div>
+                    </article>
+                    <article class="step-card">
+                        <div class="col-md-4">
+                            <span class="step-numbering">2</span>
+                            <h3> Personalized Smile Design</h3>
+                            <p>We take the time to undrstand your goals</p>
+                        </div>
+                    </article>
+                    <article class="step-card">
+                        <div class="col-md-4">
+                            <span class="step-numbering">3</span>
+                            <h3> Enjoy Your Smile Transformation</h3>
+                            <p>We take the time to undrstand your goals</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="Welcome-left">
+                    <div class="review">
+                        <div>
+                            <img class="" src="images/review.jpg">
+                            <div class="rating">
+                                <div class="rating-icons">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                                <p>
+                                    I just recently completed getting my upper veneers with Dr. Barras!
+                                </p>
+                                <h4>RENE M.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-right">
+                    <div>
+                        <h4>Welcome to The Cosmetic Dentists of Austin</h4>
+                        <h2>Elite Cosmetic Dentistry offered in luxury surroundings</h2>
+                        <p>We're passionate about creating beautiful, confident smiles through personalizedcosmetic
+                            dentistry. Combining advanced technology, artistic precision, and exceptional patient care,
+                            we design treatments that look natural, feel comfortable, and deliver lasting results.</p>
+
+                        <button class="btn btn-gold d-none">Schedule an appointment</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!---------------->
+
+        <section class="services" id="services">
+            <div class="container-fluid">
+                <div class="section-head">
+                    <h2>Our Services</h2>
+                    <h4>Transforming Smiles with Advanced Cosmetic Dentistry</h4>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <img src="images/service-veneers.jpg">
+                        <div class="service-card-label">
+                            <h3>Porcelain Veneers</h3>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service-veneers.jpg">
+                        <div class="service-card-label">
+                            <h3>Porcelain Veneers</h3>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="images/service-veneers.jpg">
+                        <div class="service-card-label">
+                            <h3>Porcelain Veneers</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="cta" id="cta">
+            <div class="container-fluid">
+                <div class="cta-txt">
+                    <div>
+                        <h2>Start Your Smile Transformation Today</h2>
+                        <p>Using advanced planning and digital technology, we'll create a smile that's uniquely tailored
+                            to your facial features.</p>
+                        <button class="btn btn-gold d-none">Schedule an appointment</button>
+                    </div>
+                    <div class="cta-img">
+                        <img src="images/smile.png">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        -------
+        <section class="about">
+            <div class="container">
+                <div class="section-head">
+                    <h2>What our patients say about us</h2>
+                    <h4>Real Patients. Real Smile Transformations.</h4>
+                </div>
+                <div class="about-grid">
+                    <div class="video-card">
+                        <div>
+                            <video src="videos/about1.mp4"></video>
+                            <div class="Video-card-play">
+                                <button class="play-button" onclick="playVideo()">▶</button>
+                            </div>
+                        </div>
+                        <div>
+                            <video src="videos/about1.mp4"></video>
+                            <div class="Video-card-play">
+                                <button class="play-button" onclick="playVideo()">▶</button>
+                            </div>
+                        </div>
+                        <div>
+                            <video src="videos/about1.mp4"></video>
+                            <div class="Video-card-play">
+                                <button class="play-button" onclick="playVideo()">▶</button> //add popup
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="apart">
+                        <div class="apart-left">
+                            <img src="images/smile.png">
+                        </div>
+                    </div>
+
+                    <div class="apart-right">
+                        <div>
+                            <h2>What Sets Us Apart?</h2>
+                        </div>
+                        <div>
+                            <p>Why do People from all around the world come to The Cosmetic Dentists of Austin for their
+                                Smile Makeover or Full Mouth Restoration?</p>
+                        </div>
+                        <div>
+                            <button class="btn" type="submit">Schedule an appointment</button>
+                        </div>
+
+                        <div class="about-list">
+                            <ul>
+                                <li>Over 500 Five Star Reviews</li>
+                                <li>Thousands of Smile Makeovers Completed</li>
+                                <li>Hundreds of Full Mouth Restorations Completed</li>
+                                <li>Extensive LVI Training</li>
+                                <li>Amazing Clear Cost Guarantee</li>
+                                <li>Express Smile Makeovers in One Week</li>
+                                <li>Complimentary Virtual & In-Person Consultations</li>
+                                <li>Affordable Financing as Low as $250 Per Month</li>
+                                <li>Several Sedation Options Available</li>
+                                <li>Saturday appointments available</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="section-head">
+                        <h2>Meet Our Smile Experts</h2>
+                        <h4>Dedicated to creating beautiful, healthy smiles with expert care.</h4>
+                    </div>
+                    <div>
+                        <div class="expert-tab">
+                            <button>Dr. John Christian Schiro</button>
+                            <button>Dr. John Christian Schiro</button>
+                            <button>Dr. John Christian Schiro</button>
+                        </div>
+
+                        <div class="expert-left">
+                            <img class="" src="">
+                        </div>
+
+                        <div class="expert-right">
+                            <div>
+                                <h2>Meet John<br> Christian Schiro,</h2>
+
+                                <h3>DDS, FAGD</h3>
+                            </div>
+                            <div>
+                                <p>John Christian Schiro, DDS, FAGD, is a Dentist in Austin, Texas providing cosmetic
+                                    dentistry, sedation dentistry, and full-mouth restoration dentistry.</p>
+                                <p>“It would be hard to overstate how far every aspect of cosmetic dentistry has come
+                                    since I performed my first case more than 20 years ago. Thanks to the tremendous
+                                    progress in the quality of the material we use, the results we can achieve today are
+                                    truly incredible.”</p>
+                            </div>
+                            <div>
+                                <button class="btn" type="submit">Schedule an appointment</button>
+                            </div>
+                        </div>
+
+                    </div>
+        </section>
+
+
+        <section class="gallery">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Beautiful Smiles we have created</h2>
+                    <h4>Real Patients. Real Smile Transformations.</h4>
+                </div>
+
+                <div class="gallery-list-face">
+                    <div class="image-list">
+                        <div class="image-item">
+                            <img src="image1.jpg" alt="Image 1">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image2.jpg" alt="Image 2">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image3.jpg" alt="Image 3">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image4.jpg" alt="Image 4">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image5.jpg" alt="Image 5">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image6.jpg" alt="Image 6">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image7.jpg" alt="Image 7">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image8.jpg" alt="Image 8">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-list-mouth">
+                    <div class="image-list">
+                        <div class="image-item">
+                            <img src="image1.jpg" alt="Image 1">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image2.jpg" alt="Image 2">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image3.jpg" alt="Image 3">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image4.jpg" alt="Image 4">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image5.jpg" alt="Image 5">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image6.jpg" alt="Image 6">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image7.jpg" alt="Image 7">
+                        </div>
+
+                        <div class="image-item">
+                            <img src="image8.jpg" alt="Image 8">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <div class="section-head">
+                    <div>
+                        <h2>Everything You Need to Know</h2>
+
+                        <h4>Learn more about our cosmetic dental treatments and what to expect.</h4>
+                    </div>
+                    <div>
+                        <button class="btn" type="submit">Schedule an appointment</button>
+                    </div>
+                </div>
+
+                <div class="grid-list">
+                    <div class="grid-item">
+                        <div class="item-header">
+                            <h3>How Do I Know If I Need Orthodontic Treatment?</h3>
+                            <button class="expand-btn">+</button>
+                        </div>
+
+                        <div class="item-content">
+                            <p>txt</p>
+                        </div>
+                    </div>
+
+                    <div class="accordin"> //bootstrap
+                        <div class="accordin-item">
+                            <h3>How Long Does Treatment Usually Take?</h3>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                aria-expanded="true">
+                        </div>
+
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong>
+                                It is shown by default, until the collapse plugin adds the appropriate classes that we
+                                use to style each element. These classes control the overall appearance, as well as the
+                                showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                                overriding our default variables. It's also worth noting that just about any HTML can go
+                                within...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordin">
+                        <div class="accordin-item">
+                            <h3>How Long Does Treatment Usually Take?</h3>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                aria-expanded="true">
+                        </div>
+
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong>
+                                It is shown by default, until the collapse plugin adds the appropriate classes that we
+                                use to style each element. These classes control the overall appearance, as well as the
+                                showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                                overriding our default variables. It's also worth noting that just about any HTML can go
+                                within...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordin">
+                        <div class="accordin-item">
+                            <h3>How Long Does Treatment Usually Take?</h3>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                aria-expanded="true">
+                        </div>
+
+                        <div id="collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong>
+                                It is shown by default, until the collapse plugin adds the appropriate classes that we
+                                use to style each element. These classes control the overall appearance, as well as the
+                                showing and hiding via CSS transitions. You can modify any of this with custom CSS or
+                                overriding our default variables. It's also worth noting that just about any HTML can go
+                                within...
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-column">
+                    <div>
+                        <img src="images/logo.svg">
+                    </div>
+
+                    <div>
+                        <ul>
+                            <li><a class="Follow" href="www.example.com">FOLLOW US</a></li>
+                            <li><a class="X" href="www.example.com">X</a></li>
+                            <li><a class="Facebbok" href="www.facebook.com">Facebook</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p>All Rights Reserved 2026</p>
+                        <p>Website By <img src="edm.png"></p>
+                    </div>
+                </div>
+
+
+                <div class="footer-column">
+                    <div class="footer-contact">
+
+                        <div class="footer-item">
+                            <h5>Mobile</h5>
+                            <a href="tel:5123337777">512.333.7777</a>
+                        </div>
+
+                        <div class="footer-item">
+                            <h5>Location</h5>
+                            <p>2700 Barton Creek Blvd.<br>
+                                Suite 130, Austin, TX 78735
+                            </p>
+                        </div>
+
+                        <div class="footer-item">
+                            <h4>E-mail</h4>
+                            <a href="mailto:thecosmeticdentistsofaustin.com">
+                                thecosmeticdentistsofaustin.com
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footer-column">
+                    <div class="footer-item">
+                        <h4>Office hours</h4>
+
+                        <ul class="office-hours">
+                            <li>
+                                <span>Monday</span>
+                                <span>9:00AM - 5:00PM</span>
+                            </li>
+                            <li>
+                                <span>Tuesday</span>
+                                <span>9:00AM - 5:00PM</span>
+                            </li>
+
+                            <li>
+                                <span>Wednesday</span>
+                                <span>9:00AM - 5:00PM</span>
+                            </li>
+                            <li>
+                                <span>Thursday</span>
+                                <span>9:00AM - 5:00PM</span>
+                            </li>
+
+                            <li>
+                                <span>Friday</span>
+                                <span>9:00AM - 5:00PM</span>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <div>
+                        <h2>Your Dream Smile Starts Here</h2>
+
+                        <h4>Experience expert care and personalized treatments designed around your goals.</h4>
+                    </div>
+                    <div>
+                        <button class="btn" type="submit">Schedule an appointment</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
