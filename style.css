@@ -276,7 +276,7 @@ header.navbar {
     display: grid;
     grid-template-columns: 5fr 7fr;
     gap: 2.5rem;
-    align-items: center;
+    align-items: stretch;
 }
 
 
@@ -315,8 +315,8 @@ header.navbar {
 }
 
 .review p { 
-  font-size: 0.85rem; 
-  color: #444; 
+  font-size: 0.65rem; 
+  color: #9f9f9f; 
   margin-bottom: 0.6rem; 
 }
 
@@ -353,7 +353,7 @@ header.navbar {
 }
 
 .welcome-right p { 
-  font-size: 1rem; 
+  font-size: 0.8rem; 
   color: #444;
   line-height: 1.7;
   margin-bottom: 2rem;
@@ -377,11 +377,13 @@ header.navbar {
 .section-head { 
     text-align: center; 
     margin-bottom: 3.5rem; 
+
 }
 
 .section-head h4 {
   font-family: var(--font-body);
-  font-weight: 300;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: var(--text-muted);
   margin: 0;
 }
@@ -417,8 +419,9 @@ header.navbar {
 }
 .service-card-label h3 {
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin: 0;
+  padding-bottom: 0.8rem;
 }
 
 /*CTA*/
