@@ -189,198 +189,186 @@
                     <p>Using advanced planning and digital technology, we'll create a smile that's uniquely tailored
                       to your facial features.</p>
                     <button class="btn btn-gold">Schedule an appointment</button>
-                    
-                    <div class="cta-img">
-                        <img src="images/smile.png">
-                    </div>
+                </div>   
+                <div class="cta-img">
+                    <img src="images/smile.png">
                 </div>
             </div>
         </section>
 
-        -------
-        <section class="about">
+    
+       <section class="testimonials" id="testimonials">
             <div class="container">
                 <div class="section-head">
                     <h2>What our patients say about us</h2>
                     <h4>Real Patients. Real Smile Transformations.</h4>
                 </div>
-                <div class="about-grid">
-                    <div class="video-card">
-                        <div>
-                            <video src="videos/about1.mp4"></video>
-                            <div class="Video-card-play">
-                                <button class="play-button" onclick="playVideo()">▶</button>
-                            </div>
-                        </div>
-                        <div>
-                            <video src="videos/about1.mp4"></video>
-                            <div class="Video-card-play">
-                                <button class="play-button" onclick="playVideo()">▶</button>
-                            </div>
-                        </div>
-                        <div>
-                            <video src="videos/about1.mp4"></video>
-                            <div class="Video-card-play">
-                                <button class="play-button" onclick="playVideo()">▶</button> //add popup
-                            </div>
-                        </div>
+
+                <div class="video-grid">
+                    <div class="video-card" data-video="https://www.youtube.com/embed/VIDEO_1">
+                        <img src="images/testimonial.jpg" alt="Patient testimonial video 1">
+                        <button class="play-button" type="button" aria-label="Play video"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="video-card" data-video="https://www.youtube.com/embed/VIDEO_2">
+                        <img src="images/testimonial.jpg" alt="Patient testimonial video 2">
+                        <button class="play-button" type="button" aria-label="Play video"><i class="fa-solid fa-play"></i></button>
+                    </div>
+                    <div class="video-card" data-video="https://www.youtube.com/embed/VIDEO_3">
+                        <img src="images/testimonial.jpg" alt="Patient testimonial video 3">
+                        <button class="play-button" type="button" aria-label="Play video"><i class="fa-solid fa-play"></i></button>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="container">
-                    <div class="apart">
-                        <div class="apart-left">
-                            <img src="images/smile.png">
-                        </div>
+        <section class="apart-section" id="about">
+            <div class="container">
+                <div class="apart">
+                    <div class="apart-left">
+                        <img src="images/apart.png" alt="Patient enjoying a drink outdoors">
                     </div>
 
                     <div class="apart-right">
-                        <div>
-                            <h2>What Sets Us Apart?</h2>
-                        </div>
-                        <div>
-                            <p>Why do People from all around the world come to The Cosmetic Dentists of Austin for their
-                                Smile Makeover or Full Mouth Restoration?</p>
-                        </div>
-                        <div>
-                            <button class="btn" type="submit">Schedule an appointment</button>
-                        </div>
+                        <h2>What Sets Us Apart?</h2>
+                        <p>Why do People from all around the world come to The Cosmetic Dentists of Austin for their Smile Makeover or Full Mouth Restoration?</p>
 
-                        <div class="about-list">
-                            <ul>
-                                <li>Over 500 Five Star Reviews</li>
-                                <li>Thousands of Smile Makeovers Completed</li>
-                                <li>Hundreds of Full Mouth Restorations Completed</li>
-                                <li>Extensive LVI Training</li>
-                                <li>Amazing Clear Cost Guarantee</li>
-                                <li>Express Smile Makeovers in One Week</li>
-                                <li>Complimentary Virtual & In-Person Consultations</li>
-                                <li>Affordable Financing as Low as $250 Per Month</li>
-                                <li>Several Sedation Options Available</li>
-                                <li>Saturday appointments available</li>
-                            </ul>
-                        </div>
+                        <ul class="about-list">
+                            <li>Over 500 Five Star Reviews</li>
+                            <li>Thousands of Smile Makeovers Completed</li>
+                            <li>Hundreds of Full Mouth Restorations Completed</li>
+                            <li>Extensive LVI Training</li>
+                            <li>Amazing Clear Cost Guarantee</li>
+                            <li>Express Smile Makeovers in One Week</li>
+                            <li>Complimentary Virtual &amp; In-Person Consultations</li>
+                            <li>Affordable Financing as Low as $250 Per Month</li>
+                            <li>Several Sedation Options Available</li>
+                            <li>Saturday appointments available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experts" id="experts">
+            <div class="container">
+                <div class="section-head">
+                    <h2>Meet Our Smile Experts</h2>
+                    <h4>Dedicated to creating beautiful, healthy smiles with expert care.</h4>
+                </div>
+
+                <div class="expert-tabs">
+                    <button class="expert-tab active" data-target="panel-schiro">Dr. John Christian Schiro</button>
+                    <button class="expert-tab" data-target="panel-barras">Dr. John D. Barras</button>
+                    <button class="expert-tab" data-target="panel-hay">Dr. John M. Hay</button>
+                </div>
+
+                <div class="expert-panel" id="panel-schiro">
+                    <div class="expert-left">
+                        <img src="images/dr-schiro.jpg" alt="Dr. John Christian Schiro">
+                    </div>
+
+                    <div class="expert-right">
+                        <h2>Meet John<br>Christian Schiro,</h2>
+                        <h3>DDS, FAGD</h3>
+                        <p>John Christian Schiro, DDS, FAGD, is a Dentist in Austin, Texas providing cosmetic dentistry, sedation dentistry, and full-mouth restoration dentistry.</p>
+                        <p>&ldquo;It would be hard to overstate how far every aspect of cosmetic dentistry has come since I performed my first case more than 20 years ago. Thanks to the tremendous progress in the quality of the material we use, the results we can achieve today are truly incredible.&rdquo;</p>
                     </div>
                 </div>
 
-                <div class="container">
-                    <div class="section-head">
-                        <h2>Meet Our Smile Experts</h2>
-                        <h4>Dedicated to creating beautiful, healthy smiles with expert care.</h4>
+                <div class="expert-panel" id="panel-barras" hidden>
+                    <div class="expert-left">
+                        <img src="images/dr-barras.jpg" alt="Dr. John D. Barras">
                     </div>
-                    <div>
-                        <div class="expert-tab">
-                            <button>Dr. John Christian Schiro</button>
-                            <button>Dr. John Christian Schiro</button>
-                            <button>Dr. John Christian Schiro</button>
-                        </div>
 
-                        <div class="expert-left">
-                            <img class="" src="">
-                        </div>
-
-                        <div class="expert-right">
-                            <div>
-                                <h2>Meet John<br> Christian Schiro,</h2>
-
-                                <h3>DDS, FAGD</h3>
-                            </div>
-                            <div>
-                                <p>John Christian Schiro, DDS, FAGD, is a Dentist in Austin, Texas providing cosmetic
-                                    dentistry, sedation dentistry, and full-mouth restoration dentistry.</p>
-                                <p>“It would be hard to overstate how far every aspect of cosmetic dentistry has come
-                                    since I performed my first case more than 20 years ago. Thanks to the tremendous
-                                    progress in the quality of the material we use, the results we can achieve today are
-                                    truly incredible.”</p>
-                            </div>
-                            <div>
-                                <button class="btn" type="submit">Schedule an appointment</button>
-                            </div>
-                        </div>
-
+                    <div class="expert-right">
+                        <h2>Meet John<br>D. Barras,</h2>
+                        <h3>DDS</h3>
+                        <p>John D. Barras, DDS, is a Dentist in Austin, Texas providing cosmetic dentistry, sedation dentistry, and full-mouth restoration dentistry.</p>
+                        <p>&ldquo;Every patient who sits in my chair has a story behind their smile. My goal has always been to combine precision with genuine care, so the results aren't just beautiful — they last a lifetime.&rdquo;</p>
                     </div>
+                </div>
+
+                <div class="expert-panel" id="panel-hay" hidden>
+                    <div class="expert-left">
+                        <img src="images/dr-hay.jpg" alt="Dr. John M. Hay">
+                    </div>
+                    <div class="expert-right">
+                        <h2>Meet John<br>M. Hay,</h2>
+                        <h3>DDS</h3>
+                        <p>John M. Hay, DDS, is a Dentist in Austin, Texas providing cosmetic dentistry, sedation dentistry, and full-mouth restoration dentistry.</p>
+                        <p>&ldquo;Cosmetic dentistry today lets us do things that simply weren't possible a decade ago. I love being able to give patients a smile that finally feels like their own.&rdquo;</p>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-
-        <section class="gallery">
+        <!--GALLERY-->       
+        <section class="gallery" id="gallery">
             <div class="container">
                 <div class="section-head">
                     <h2>Beautiful Smiles we have created</h2>
                     <h4>Real Patients. Real Smile Transformations.</h4>
                 </div>
 
-                <div class="gallery-list-face">
-                    <div class="image-list">
-                        <div class="image-item">
-                            <img src="image1.jpg" alt="Image 1">
-                        </div>
+                <div class="image-list">
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 1">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image2.jpg" alt="Image 2">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 2">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image3.jpg" alt="Image 3">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 3">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image4.jpg" alt="Image 4">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 4">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image5.jpg" alt="Image 5">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 5">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image6.jpg" alt="Image 6">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 6">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image7.jpg" alt="Image 7">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 7">
+                    </div>
 
-                        <div class="image-item">
-                            <img src="image8.jpg" alt="Image 8">
-                        </div>
+                    <div class="image-item">
+                        <img src="images/output-a-1.png" alt="Image 8">
+                    </div>
+
+                    
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/output-b-1.png" alt="Image 1">
                     </div>
                 </div>
-
-                <div class="gallery-list-mouth">
-                    <div class="image-list">
-                        <div class="image-item">
-                            <img src="image1.jpg" alt="Image 1">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image2.jpg" alt="Image 2">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image3.jpg" alt="Image 3">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image4.jpg" alt="Image 4">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image5.jpg" alt="Image 5">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image6.jpg" alt="Image 6">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image7.jpg" alt="Image 7">
-                        </div>
-
-                        <div class="image-item">
-                            <img src="image8.jpg" alt="Image 8">
-                        </div>
-                    </div>
-                </div>
-
 
             </div>
         </section>
@@ -574,6 +562,8 @@
 
     </footer>
 
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
