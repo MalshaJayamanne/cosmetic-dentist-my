@@ -7,14 +7,14 @@
 
     <title>The Cosmetic Dentists</title>
 
-    // css styling
+    <!-- css styling -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Poppins:wght@300;400;500&display=swap"
         rel="stylesheet">
 
-    //bootstrap
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -24,30 +24,29 @@
 </head>
 
 <body>
-    <header class="navbar container">
-        <div class="navbar navbar-expand-lg">
+    <header class="navbar">
+        <div class="navbar-expand-lg d-none d-lg-flex">
             <div>
                 <ul class="nav-links">
                     <li class="nav-item"><a class="nav-link" href="#hero">HOME</a></li>
                     <li class="nav-item"><a class="nav-link" href="#process">PROCESS</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">OUR SEVICES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">OUR SERVICES</a></li>
                 </ul>
             </div>
 
-            <div class="navbar-brand mx-auto">
-                <a href="#hero"><img class="logo" src="images/logo.svg"></a>
+            <div class="navbar-brand">
+                <a href="#hero"><img class="logo" src="images/logo.png"></a>
             </div>
 
             <div>
-                <ul class="nav-links">
+                <ul class="nav-links d-none d-lg-flex">
                     <li class="nav-item"><a class="nav-link" href="#gallery">SMILE GALLERY</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 </ul>
             </div>
             <div>
-                <a href="#contact"><button class="btn btn-gold d-none" type="button">Schedule an
-                        appointment</button></a>
+                <a class="btn btn-gold d-none d-lg-inline-block" href="#contact">Schedule an appointment</a>
             </div>
         </div>
     </header>
@@ -59,17 +58,16 @@
 
         <section class="hero" id="hero">
             <div class="row">
-                <div class="col-lg-6 hero-image">
+                <div class="col-lg-6">
                     <img src="images/hero.jpg">
                 </div>
 
-                <div class="col-lg-6 hero-form">
-                    <div>
-                        <h1>Start Your Smile Transformation Today</h1>
+                <div class="col-lg-6">
+                    <div class="hero-form">
+                        <h1>Start Your Smile<br> Transformation Today</h1>
 
                         <h5 class="hero-txt">Complete the form to request your personalized cosmetic consultation.</h5>
-                    </div>
-                    <div>
+                    
                         <form class="form" id="form" action="#" method="post">
                             <div class="mb-4 text-center">
                                 <input id="lf-name" type="text" name="name" placeholder="NAME" required>
@@ -85,7 +83,7 @@
                                 <input id="lf-message" type="text" name="message" placeholder="MESSAGE">
                             </div>
                             <div>
-                                <button class="btn" type="submit">Schedule an appointment</button>
+                                <a class="btn btn-gold d-none d-lg-inline-block" href="#contact">Schedule an appointment</a>
                             </div>
                         </form>
                     </div>
@@ -93,9 +91,11 @@
             </div>
         </section>
 
+    <!---------------->
+
         <section class="process" id="process">
-            <div class="container-fluid">
-                <div class="process-head">
+            <div class="container">
+                <div class="row">
                     <div class="col-lg-6">
                         <h2>Our Process</h2>
                         <h4>Our 3 steps to create the beautiful smile your deserve</h4>
