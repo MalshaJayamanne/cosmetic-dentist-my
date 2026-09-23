@@ -6,7 +6,7 @@
     --font-display: "Playfair Display", Georgia, serif;
     --font-body: "Poppins", system-ui, sans-serif;
     --header-h: 100px;
-    --side-padding: 5rem;
+    --side-padding: 4rem;
 }
 
 * { box-sizing: 
@@ -59,8 +59,9 @@ header.navbar {
     width: 100%; 
     gap: 3rem;  
     height: var(--header-h);
-    gap: 1.5rem; 
     padding-inline: var(--side-padding);
+    padding-left: 14rem;
+    padding-right: 14rem;
 }
 
 .nav-links {
@@ -73,7 +74,7 @@ header.navbar {
 }
 
 .nav-link {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #fff;
@@ -89,9 +90,7 @@ header.navbar {
     width: auto;
 }
 
-
-
-
+/* BUTTONS */
 .btn{
     display: inline-block;
     background: var(--ink);
@@ -99,17 +98,17 @@ header.navbar {
     font-weight: 700; 
     border: 0;
     font-size: 0.68rem;
-    font-weight: 580;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     padding: 0.9rem 1.6rem;
-    border-radius: 2px;
+    border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
 }
 
 .btn:hover { 
-  background: rgb(255, 255, 255); 
+  background: rgb(239, 243, 167); 
 }
 
 .btn-gold {
@@ -150,9 +149,8 @@ header.navbar {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    padding-top: calc(var(--header-h) + 2rem);
+    padding-top: calc(var(--header-h) + 10rem);
     padding-bottom: 3rem;
-    padding-left: var(--side-padding);
     padding-right: 0;
 }
 
@@ -162,7 +160,7 @@ header.navbar {
 }
 
 .hero-txt {
-    font-size: 0.66rem;
+    font-size: 0.7rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-on-dark);
@@ -199,7 +197,6 @@ header.navbar {
     outline: none;
     border-bottom-color: var(--gold);
 }
-
 
 
  /* PROCESS*/
@@ -239,23 +236,19 @@ header.navbar {
   position: static;  
   background: #1c1c1c;
   border-radius: 12px;
-  padding:  2rem 2rem;
-  flex: 1 1 0;   
+  padding:  1.5rem 1.5rem;  
 }
 
 .step-numbering {
   display: block;
   font-family: var(--font-display);
-  font-size: 5rem;
+  font-size: 7rem;
   color: var(--gold);
   opacity: 0.55;
-  margin-bottom: 2rem;
-  margin-top: 1rem;
 }
 
 .step-card h3 { 
     color: #fff; 
-    font-size: 2rem;
     font-weight: 500;  
     margin-bottom: 1rem;
 }
@@ -263,9 +256,11 @@ header.navbar {
 .step-card p { 
     font-size: 0.85rem; 
     font-weight: 500; 
-    margin: 0; 
+    margin: 2rem 0; 
     color: var(--text-on-dark); 
 }
+
+/* WELCOME */
 
 .welcome-wrap {
     background: var(--cream, #f5f2ed);
@@ -339,6 +334,7 @@ header.navbar {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: var(--side-padding);
 }
 
 .welcome-right h4 {
@@ -350,7 +346,7 @@ header.navbar {
 }
 
 .welcome-right h2 { 
-  color: #1a1a1a;
+  color: #666;
   font-size: clamp(1.8rem, 2.6vw, 2.4rem);
   margin-bottom: 1.5rem; 
 }
@@ -360,6 +356,13 @@ header.navbar {
   color: #444;
   line-height: 1.7;
   margin-bottom: 2rem;
+}
+
+.welcome-right .btn { 
+  font-size: 0.7rem; 
+  padding: 0.8rem 1.5rem; 
+  letter-spacing: 0.1em; 
+  max-width: 250px;
 }
 
 @media (max-width: 900px) {
@@ -459,7 +462,7 @@ header.navbar {
 .cta-txt p {
     font-size: 1rem;
     color: #333;
-    max-width: 34ch;
+    max-width: 52ch;
     margin-bottom: 2rem;
 }
 
@@ -761,8 +764,15 @@ header.navbar {
 .footer {
     background: var(--ink);
     color: var(--text-on-dark);
-    padding-block: 4rem;
+    padding-block: 5rem;
+    margin-top: 5rem;
 }
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
 
 .footer-content {
     display: grid;
@@ -781,6 +791,7 @@ header.navbar {
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 40px;
     font-size: 0.7rem;
     font-weight: 600;
     letter-spacing: 0.15em;
@@ -788,9 +799,24 @@ header.navbar {
     margin-bottom: 1.5rem;
 }
 
+.footer-social span {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
 .footer-social a { 
     color: #fff; 
-    display: inline-flex; 
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+}
+
+.footer-social svg {
+    width: 28px;
+    height: 28px;
 }
 
 .footer-social a:hover { 
@@ -853,7 +879,7 @@ header.navbar {
 
 .footer-cta {
     background: var(--ink);
-    padding: 3rem;
+    padding: 2.7rem;
     margin-top: -3rem;
     text-align: center;
 }
