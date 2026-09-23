@@ -443,6 +443,7 @@ header.navbar {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     min-height: 80vh;
+    margin-left: 14rem;
 }
 
 .cta-txt {
@@ -694,8 +695,6 @@ header.navbar {
     display: block;
 }
 
-
-
 @media (max-width: 768px) {
     .image-list { grid-template-columns: repeat(2, 1fr); }
 }
@@ -704,3 +703,181 @@ header.navbar {
     .image-list { grid-template-columns: repeat(2, 1fr); }
 }
 
+/*FAQ*/
+.faq { 
+    padding-block: 6rem; 
+    background: #fff; 
+}
+
+.faq .section-head h2 { 
+    margin-bottom: 0.5rem; 
+}
+
+.faq .section-head h4 {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.faq-accordion { 
+    max-width: 1200px; 
+    margin-inline: auto; 
+}
+
+.faq-accordion .accordion-item {
+    border: 0;
+    background: #f7f4ef;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.faq-accordion .accordion-button {
+    background: #f7f4ef;
+    box-shadow: none;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    padding: 1.5rem 1.75rem;
+}
+
+.faq-accordion .accordion-button::after {
+    background-image: none;
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 300;
+    width: auto;
+    height: auto;
+    transform: none;
+}
+
+.faq-accordion .accordion-body {
+    padding: 0 1.75rem 1.5rem;
+    color: #555;
+    font-size: 1rem;
+}
+
+/*FOOTER*/
+.footer {
+    background: var(--ink);
+    color: var(--text-on-dark);
+    padding-block: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1.4fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-logo { 
+    height: 120px; 
+    width: auto; 
+    margin-bottom: 1.5rem; 
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.footer-social a { 
+    color: #fff; 
+    display: inline-flex; 
+}
+
+.footer-social a:hover { 
+    color: var(--gold); 
+}
+
+.footer-legal {
+    font-size: 0.75rem;
+    font-weight: 450;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.footer-edm-logo { 
+    height: 40px; 
+    width: auto; 
+    display: inline-block; 
+}
+
+.footer-item { 
+    margin-bottom: 1.5rem; 
+}
+
+.footer-item h5 {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-item p,
+.footer-item a {
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-item a:hover { 
+    color: var(--gold); 
+}
+
+.office-hours { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.office-hours li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+}
+
+.footer-cta {
+    background: var(--ink);
+    padding: 3rem;
+    margin-top: -3rem;
+    text-align: center;
+}
+
+.footer-cta h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.footer-cta h4 {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: #999;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+    .footer-content { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+    .footer-content { grid-template-columns: 1fr; }
+}
