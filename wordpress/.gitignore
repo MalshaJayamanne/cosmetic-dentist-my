@@ -91,5 +91,8 @@ vendor/
 wordpress/wp-content/debug.log
 
 
+# ==============================
+# Local database
+# ==============================
 db/
 docker-compose.yml
