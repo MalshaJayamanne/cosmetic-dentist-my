@@ -59,6 +59,7 @@ header.navbar {
     position: absolute;
     align-items: center;
     display: flex;
+    gap: 10px;
     inset: 0 0 auto 0;
     z-index: 50;
     background: transparent;
@@ -790,6 +791,17 @@ header.navbar {
     font-weight: 500;
     color: #323232;
     margin-bottom: 9px;
+}
+
+/* ADDED: Remove unwanted WYSIWYG paragraph spacing */
+.faq .section-head p {
+    margin: 0;
+}
+
+
+/* ADDED: Prevent paragraph wrapper from adding space around the link */
+.faq .section-head > div > p:last-child {
+    margin-bottom: 0;
 }
 
 .faq-accordion { 

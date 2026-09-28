@@ -788,7 +788,7 @@
                     "name": "title",
                     "aria-label": "",
                     "type": "text",
-                    "instructions": "Use <h2> <br> <h2> for title<br>\r\nUse <h3> for subheading below the title.",
+                    "instructions": "Use <code>h2<\/code> for title\r\nUse <code>h3<\/code> for subheading below the title.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -837,7 +837,7 @@
                     "name": "content",
                     "aria-label": "",
                     "type": "wysiwyg",
-                    "instructions": "",
+                    "instructions": "Use <code>h2<\/code> for title <br>\r\nUse <code>h3<\/code> for subheading below the title.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -908,7 +908,7 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
+            "return_format": "id",
             "library": "all",
             "min": "",
             "max": "",
@@ -1068,5 +1068,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790584255
+    "modified": 1790595138
 }

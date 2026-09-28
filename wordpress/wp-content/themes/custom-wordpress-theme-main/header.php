@@ -41,7 +41,7 @@ $right_menu           = get_field('right_menu', 'option');
             <span></span>
             <span></span>
         </button>
-        
+
 
         <!-- Desktop Navigation -->
         <div
@@ -54,12 +54,12 @@ $right_menu           = get_field('right_menu', 'option');
 
                 <?php
                 wp_nav_menu([
-                    'menu'       => $left_menu,
-                    'container'  => false,
-                    'menu_class' => 'nav-links',
+                    'menu'        => $left_menu,
+                    'container'   => false,
+                    'menu_class'  => 'nav-links',
                     'fallback_cb' => false,
-                    'items_wrap' => '<ul class="nav-links">%3$s</ul>',
-                    'depth'      => 1,
+                    'items_wrap'  => '<ul class="nav-links">%3$s</ul>',
+                    'depth'       => 1,
                 ]);
                 ?>
 
@@ -73,27 +73,7 @@ $right_menu           = get_field('right_menu', 'option');
 
                     <?php if ($logo) : ?>
 
-                        <?php
-                        $logo_url = wp_get_attachment_image_url($logo, 'full');
-
-                        $logo_alt = get_post_meta(
-                            $logo,
-                            '_wp_attachment_image_alt',
-                            true
-                        );
-                        ?>
-
-                        <?php if ($logo_url) : ?>
-
-                            <img
-                                class="logo"
-                                src="<?php echo esc_url($logo_url); ?>"
-                                alt="<?php echo esc_attr(
-                                    $logo_alt ?: get_bloginfo('name')
-                                ); ?>"
-                            >
-
-                        <?php endif; ?>
+                        <?php get_image($logo, 'logo', get_bloginfo('name')); ?>
 
                     <?php endif; ?>
 
@@ -107,14 +87,12 @@ $right_menu           = get_field('right_menu', 'option');
 
                 <?php
                 wp_nav_menu([
-                    'menu'       => $right_menu,
-                    'container'  => false,
-                    'menu_class' => 'nav-links',
+                    'menu'        => $right_menu,
+                    'container'   => false,
+                    'menu_class'  => 'nav-links',
                     'fallback_cb' => false,
-                    'items_wrap' => '<ul class="nav-links">%3$s</ul>',
-                    'depth'      => 1,
-                    'item_class'  => 'nav-item',   
-                    'link_class'  => 'nav-link',
+                    'items_wrap'  => '<ul class="nav-links">%3$s</ul>',
+                    'depth'       => 1,
                 ]);
                 ?>
 

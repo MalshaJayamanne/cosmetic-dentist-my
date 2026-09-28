@@ -29,7 +29,6 @@ $services      = get_field('services');
                     <?php
                     $service_image = $service['image'];
                     $service_name  = $service['title'];
-                    $service_link  = $service['link'];
                     ?>
 
                     <div class="service-card">
@@ -37,29 +36,11 @@ $services      = get_field('services');
                         <!-- SERVICE IMAGE -->
                         <?php if ($service_image) : ?>
 
-                            <?php
-                            $service_image_url = wp_get_attachment_image_url(
+                            <?php get_image(
                                 $service_image,
-                                'full'
-                            );
-
-                            $service_image_alt = get_post_meta(
-                                $service_image,
-                                '_wp_attachment_image_alt',
-                                true
-                            );
-                            ?>
-
-                            <?php if ($service_image_url) : ?>
-
-                                <img
-                                    src="<?php echo esc_url($service_image_url); ?>"
-                                    alt="<?php echo esc_attr(
-                                        $service_image_alt ?: $service_name
-                                    ); ?>"
-                                >
-
-                            <?php endif; ?>
+                                'service',
+                                $service_name ?: 'Cosmetic dentistry service'
+                            ); ?>
 
                         <?php endif; ?>
 

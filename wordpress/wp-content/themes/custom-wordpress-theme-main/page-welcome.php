@@ -21,27 +21,11 @@ $welcome_link    = get_field('welcome_link');
 
                     <?php if ($welcome_image) : ?>
 
-                        <?php
-                        $welcome_image_url = wp_get_attachment_image_url(
+                        <?php get_image(
                             $welcome_image,
-                            'full'
-                        );
-
-                        $welcome_image_alt = get_post_meta(
-                            $welcome_image,
-                            '_wp_attachment_image_alt',
-                            true
-                        );
-                        ?>
-
-                        <?php if ($welcome_image_url) : ?>
-
-                            <img
-                                src="<?php echo esc_url($welcome_image_url); ?>"
-                                alt="<?php echo esc_attr($welcome_image_alt ?: $reviewer_name); ?>"
-                            >
-
-                        <?php endif; ?>
+                            'welcome',
+                            $reviewer_name ?: 'Patient review'
+                        ); ?>
 
                     <?php endif; ?>
 
