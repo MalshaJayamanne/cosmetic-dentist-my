@@ -1,15 +1,24 @@
 # ==============================
-# WordPress generated/user files
+# WordPress core - don't track
 # ==============================
 
-# WordPress core
 wordpress/wp-admin/
 wordpress/wp-includes/
+
+# ==============================
+# WordPress generated files
+# ==============================
 
 wordpress/wp-content/uploads/
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
+wordpress/wp-content/debug.log
 
+# ==============================
+# Local database
+# ==============================
+
+db/
 
 # ==============================
 # Environment / secrets
@@ -43,7 +52,7 @@ Thumbs.db
 desktop.ini
 
 # ==============================
-# IDE / editors
+# IDE
 # ==============================
 
 .vscode/
@@ -80,16 +89,6 @@ blob-report/
 
 vendor/
 
-# Keep the theme vendor folder because your theme requires it
+# Keep theme vendor because your theme requires it
 !wordpress/wp-content/themes/custom-wordpress-theme-main/vendor/
 !wordpress/wp-content/themes/custom-wordpress-theme-main/vendor/**
-
-# ==============================
-# WordPress debug log
-# ==============================
-
-wordpress/wp-content/debug.log
-
-
-db
-docker-compose.yml
