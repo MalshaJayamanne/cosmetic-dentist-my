@@ -2,9 +2,14 @@
 # WordPress generated/user files
 # ==============================
 
+# WordPress core
+wordpress/wp-admin/
+wordpress/wp-includes/
+
 wordpress/wp-content/uploads/
 wordpress/wp-content/cache/
 wordpress/wp-content/upgrade/
+
 
 # ==============================
 # Environment / secrets
