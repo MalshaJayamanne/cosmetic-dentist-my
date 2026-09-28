@@ -91,5 +91,5 @@ vendor/
 wordpress/wp-content/debug.log
 
 
-db
+db/
 docker-compose.yml
