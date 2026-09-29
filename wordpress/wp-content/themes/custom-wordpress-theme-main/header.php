@@ -26,54 +26,49 @@ $right_menu           = get_field('right_menu', 'option');
 
 <div id="page">
 
-    <header class="navbar">
+    <header class="main-header">
 
-        <!-- Mobile Toggle -->
-        <button
-            class="nav-toggle d-lg-none"
-            type="button"
-            id="navToggle"
-            aria-label="Toggle navigation"
-            aria-expanded="false"
-            aria-controls="navbarExpand"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <div class="container">
 
+            <!-- LEFT -->
+            <div class="left">
 
-        <!-- Desktop Navigation -->
-        <div
-            class="navbar-expand-lg d-none d-lg-flex"
-            id="navbarExpand"
-        >
+                <?php if ($left_menu) : ?>
 
-            <!-- LEFT MENU -->
-            <?php if ($left_menu) : ?>
+                    <div class="menu-wrapper">
 
-                <?php
-                wp_nav_menu([
-                    'menu'        => $left_menu,
-                    'container'   => false,
-                    'menu_class'  => 'nav-links',
-                    'fallback_cb' => false,
-                    'items_wrap'  => '<ul class="nav-links">%3$s</ul>',
-                    'depth'       => 1,
-                ]);
-                ?>
+                        <?php
+                        wp_nav_menu([
+                            'menu'        => $left_menu,
+                            'container'   => 'nav',
+                            'container_class' => 'navbar navbar-expand-md p-0',
+                            'container_aria_label' => 'Left navigation',
+                            'menu_class'  => 'menu navbar-nav',
+                            'fallback_cb' => false,
+                            'items_wrap'  => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
+                            'depth'       => 1,
+                        ]);
+                        ?>
 
-            <?php endif; ?>
+                    </div>
+
+                <?php endif; ?>
+
+            </div>
 
 
             <!-- LOGO -->
-            <div class="navbar-brand">
+            <div class="logo-wrapper">
 
                 <a href="<?php echo esc_url(home_url('/')); ?>">
 
                     <?php if ($logo) : ?>
 
-                        <?php get_image($logo, 'logo', get_bloginfo('name')); ?>
+                        <?php get_image(
+                            $logo,
+                            'logo',
+                            get_bloginfo('name')
+                        ); ?>
 
                     <?php endif; ?>
 
@@ -82,30 +77,40 @@ $right_menu           = get_field('right_menu', 'option');
             </div>
 
 
-            <!-- RIGHT MENU -->
-            <?php if ($right_menu) : ?>
+            <!-- RIGHT -->
+            <div class="right">
 
-                <?php
-                wp_nav_menu([
-                    'menu'        => $right_menu,
-                    'container'   => false,
-                    'menu_class'  => 'nav-links',
-                    'fallback_cb' => false,
-                    'items_wrap'  => '<ul class="nav-links">%3$s</ul>',
-                    'depth'       => 1,
-                ]);
-                ?>
+                <?php if ($right_menu) : ?>
 
-            <?php endif; ?>
+                    <div class="menu-wrapper">
+
+                        <?php
+                        wp_nav_menu([
+                            'menu'        => $right_menu,
+                            'container'   => 'nav',
+                            'container_class' => 'navbar navbar-expand-md p-0',
+                            'container_aria_label' => 'Right navigation',
+                            'menu_class'  => 'menu navbar-nav',
+                            'fallback_cb' => false,
+                            'items_wrap'  => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
+                            'depth'       => 1,
+                        ]);
+                        ?>
+
+                    </div>
+
+                <?php endif; ?>
 
 
-            <!-- APPOINTMENT BUTTON -->
-            <a
-                class="btn btn-gold"
-                href="<?php echo esc_url(home_url('/#cta')); ?>"
-            >
-                Schedule an appointment
-            </a>
+                <!-- APPOINTMENT BUTTON -->
+                <a
+                    class="btn btn-gold"
+                    href="<?php echo esc_url(home_url('/#cta')); ?>"
+                >
+                    Schedule an appointment
+                </a>
+
+            </div>
 
         </div>
 
