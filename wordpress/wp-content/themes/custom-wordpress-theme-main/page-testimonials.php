@@ -1,8 +1,6 @@
 <?php
-
 $testimonial_title  = get_field('testimonial_title');
 $testimonial_videos = get_field('testimonial_videos');
-
 ?>
 
 <section class="testimonials" id="testimonials">
@@ -29,27 +27,34 @@ $testimonial_videos = get_field('testimonial_videos');
                     $image_id = is_array($video_image)
                         ? ($video_image['ID'] ?? 0)
                         : $video_image;
+
+                    $video_url = is_array($video_link)
+                        ? ($video_link['url'] ?? '')
+                        : $video_link;
                     ?>
 
-                    <?php if ($video_link && !empty($video_link['url'])) : ?>
+                    <?php if ($video_url) : ?>
 
                         <a
+                            href="<?php echo esc_url($video_url); ?>"
                             class="video-card"
-                            href="<?php echo esc_url($video_link['url']); ?>"
-                            target="<?php echo esc_attr($video_link['target'] ?: '_self'); ?>"
+                            data-fancybox="testimonial-videos"
                         >
 
                             <?php if ($image_id) : ?>
 
-                                <?php get_image(
+                                <?php
+                                get_image(
                                     $image_id,
                                     'testimonial',
                                     'Patient testimonial video'
-                                ); ?>
+                                );
+                                ?>
 
                             <?php endif; ?>
 
-                            <span class="play-button" aria-label="Play video">
+
+                            <span class="play-button" aria-hidden="true">
                                 <i class="fa-solid fa-play"></i>
                             </span>
 

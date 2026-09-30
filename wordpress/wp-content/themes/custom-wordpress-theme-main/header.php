@@ -97,21 +97,17 @@ $right_menu           = get_field('right_menu', 'option');
                         ]);
                         ?>
 
+                        <!-- APPOINTMENT BUTTON -->
+                        <a
+                            class="btn btn-gold"
+                            href="<?php echo esc_url(home_url('/#cta')); ?>"
+                        >
+                            Schedule an appointment
+                        </a>
                     </div>
 
                 <?php endif; ?>
 
-
-                <!-- APPOINTMENT BUTTON -->
-                <a
-                    class="btn btn-gold"
-                    href="<?php echo esc_url(home_url('/#cta')); ?>"
-                >
-                    Schedule an appointment
-                </a>
-
             </div>
-
         </div>
-
     </header>

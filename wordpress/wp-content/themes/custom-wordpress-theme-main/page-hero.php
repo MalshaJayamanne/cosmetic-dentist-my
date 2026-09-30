@@ -5,35 +5,32 @@ $hero_content = get_field('hero_content');
 
 <section class="hero">
 
+    <!-- HERO IMAGE -->
+    <div class="hero-image">
+
+        <?php if ($hero_image) : ?>
+
+            <?php
+            get_image(
+                $hero_image,
+                'hero',
+                'Patient smiling'
+            );
+            ?>
+
+        <?php endif; ?>
+
+    </div>
+
+
+    <!-- HERO CONTENT -->
     <div class="container">
 
         <div class="inner">
 
-            <!-- HERO IMAGE -->
             <div class="content-wrapper">
 
-                <div class="hero-image">
-
-                    <?php if ($hero_image) : ?>
-
-                        <?php
-                        get_image(
-                            $hero_image,
-                            'hero',
-                            'Patient smiling'
-                        );
-                        ?>
-
-                    <?php endif; ?>
-
-                </div>
-
-            </div>
-
-
-            <!-- HERO FORM -->
-            <div class="form-wrapper">
-
+                <!-- HERO HEADING / CONTENT -->
                 <div class="hero-form">
 
                     <?php if ($hero_content) : ?>
@@ -42,8 +39,18 @@ $hero_content = get_field('hero_content');
 
                     <?php endif; ?>
 
+                </div>
 
-                    <form class="form" id="form" action="#" method="post">
+
+                <!-- HERO FORM -->
+                <div class="form-wrapper">
+
+                    <form
+                        class="form"
+                        id="form"
+                        action="#"
+                        method="post"
+                    >
 
                         <div class="mb-4 text-center">
 
@@ -145,4 +152,3 @@ $hero_content = get_field('hero_content');
     </div>
 
 </section>
-
