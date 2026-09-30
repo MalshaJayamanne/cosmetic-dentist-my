@@ -1,6 +1,19 @@
 <?php
-$testimonial_title  = get_field('testimonial_title');
-$testimonial_videos = get_field('testimonial_videos');
+
+/**
+ * Testimonials (video) section.
+ */
+
+$has_acf = function_exists('get_field');
+
+$testimonial_title = $has_acf
+    ? get_field('testimonial_title')
+    : '';
+
+$testimonial_videos = $has_acf
+    ? get_field('testimonial_videos')
+    : array();
+
 ?>
 
 <section class="testimonials" id="testimonials">
@@ -8,59 +21,72 @@ $testimonial_videos = get_field('testimonial_videos');
     <div class="container">
 
         <?php if ($testimonial_title) : ?>
+
             <div class="section-head">
                 <?php echo wp_kses_post($testimonial_title); ?>
             </div>
+
         <?php endif; ?>
 
 
-        <?php if ($testimonial_videos) : ?>
+        <?php if (!empty($testimonial_videos)) : ?>
 
             <div class="video-grid">
 
-                <?php foreach ($testimonial_videos as $video) : ?>
+                <?php foreach ($testimonial_videos as $index => $video) : ?>
 
                     <?php
-                    $video_image = $video['image'] ?? '';
-                    $video_link  = $video['link'] ?? '';
+                    $image = $video['image'] ?? '';
+                    $link  = $video['link'] ?? '';
 
-                    $image_id = is_array($video_image)
-                        ? ($video_image['ID'] ?? 0)
-                        : $video_image;
+                    $image_id = is_array($image)
+                        ? ($image['ID'] ?? 0)
+                        : $image;
 
-                    $video_url = is_array($video_link)
-                        ? ($video_link['url'] ?? '')
-                        : $video_link;
+                    $video_url = is_array($link)
+                        ? ($link['url'] ?? '')
+                        : $link;
+
+                    if (!$video_url) {
+                        continue;
+                    }
+
+                    $label = sprintf(
+                        'Play patient testimonial video %d',
+                        $index + 1
+                    );
                     ?>
 
-                    <?php if ($video_url) : ?>
 
-                        <a
-                            href="<?php echo esc_url($video_url); ?>"
-                            class="video-card"
-                            data-fancybox="testimonial-videos"
+                    <a
+                        href="<?php echo esc_url($video_url); ?>"
+                        class="video-card"
+                        data-fancybox="testimonial-videos"
+                        aria-label="<?php echo esc_attr($label); ?>"
+                    >
+
+                        <?php if ($image_id) : ?>
+
+                            <?php
+                            get_image(
+                                $image_id,
+                                'testimonial',
+                                ''
+                            );
+                            ?>
+
+                        <?php endif; ?>
+
+
+                        <span
+                            class="play-button"
+                            aria-hidden="true"
                         >
+                            <i class="fa-solid fa-play"></i>
+                        </span>
 
-                            <?php if ($image_id) : ?>
+                    </a>
 
-                                <?php
-                                get_image(
-                                    $image_id,
-                                    'testimonial',
-                                    'Patient testimonial video'
-                                );
-                                ?>
-
-                            <?php endif; ?>
-
-
-                            <span class="play-button" aria-hidden="true">
-                                <i class="fa-solid fa-play"></i>
-                            </span>
-
-                        </a>
-
-                    <?php endif; ?>
 
                 <?php endforeach; ?>
 
