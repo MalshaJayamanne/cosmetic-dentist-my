@@ -18,36 +18,66 @@ $gallery_images = get_field('gallery_images');
         <?php endif; ?>
 
 
-        <?php if ($gallery_images) : ?>
+        <?php if (!empty($gallery_images)) : ?>
 
             <div class="image-list">
 
                 <?php foreach ($gallery_images as $gallery_image) : ?>
 
                     <?php
+
                     $image_id = is_array($gallery_image)
                         ? ($gallery_image['ID'] ?? 0)
                         : $gallery_image;
+
+                    if (!$image_id) {
+                        continue;
+                    }
+
+                    $image_url = wp_get_attachment_image_url(
+                        $image_id,
+                        'full'
+                    );
+
+                    $image_alt = get_post_meta(
+                        $image_id,
+                        '_wp_attachment_image_alt',
+                        true
+                    );
+
+                    if (!$image_alt) {
+                        $image_alt = 'Smile transformation result';
+                    }
+
                     ?>
 
-                    <?php if ($image_id) : ?>
+                    <a
+                        href="<?php echo esc_url($image_url); ?>"
+                        class="image-item"
+                        data-fancybox="gallery"
+                        aria-label="View smile transformation"
+                    >
 
-                        <div class="image-item">
+                        <?php
+                        echo wp_get_attachment_image(
+                            $image_id,
+                            'full',
+                            false,
+                            array(
+                                'class'   => 'full-image',
+                                'alt'     => $image_alt,
+                                'loading' => 'lazy',
+                            )
+                        );
+                        ?>
 
-                            <?php
-                            echo wp_get_attachment_image(
-                                $image_id,
-                                'full',
-                                false,
-                                array(
-                                    'alt' => 'Smile transformation result'
-                                )
-                            );
-                            ?>
+                        <span class="gallery-overlay" aria-hidden="true">
 
-                        </div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
 
-                    <?php endif; ?>
+                        </span>
+
+                    </a>
 
                 <?php endforeach; ?>
 

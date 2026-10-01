@@ -18,7 +18,11 @@ $doctors      = get_field('doctors');
         <?php endif; ?>
 
 
-        <?php if ($doctors) : ?>
+        <?php if (!empty($doctors)) : ?>
+
+            <!-- =====================================================
+                 DOCTOR TABS
+            ====================================================== -->
 
             <div class="expert-tabs" role="tablist">
 
@@ -26,17 +30,19 @@ $doctors      = get_field('doctors');
 
                     <?php
                     $doctor_name = $doctor['title'] ?? '';
-                    $panel_id    = 'panel-doctor-' . $index;
                     $active      = ($index === 0);
+                    $panel_id    = 'panel-doctor-' . $index;
+                    $tab_id      = $panel_id . '-tab';
                     ?>
 
                     <button
+                        id="<?php echo esc_attr($tab_id); ?>"
                         class="expert-tab <?php echo $active ? 'active' : ''; ?>"
                         type="button"
                         role="tab"
                         aria-selected="<?php echo $active ? 'true' : 'false'; ?>"
                         aria-controls="<?php echo esc_attr($panel_id); ?>"
-                        data-target="<?php echo esc_attr($panel_id); ?>"
+                        data-index="<?php echo esc_attr($index); ?>"
                     >
                         <?php echo esc_html($doctor_name); ?>
                     </button>
@@ -46,52 +52,81 @@ $doctors      = get_field('doctors');
             </div>
 
 
-            <?php foreach ($doctors as $index => $doctor) : ?>
+            <!-- =====================================================
+                 DOCTOR CARD SWIPER
+            ====================================================== -->
 
-                <?php
-                $doctor_name    = $doctor['title'] ?? '';
-                $doctor_image   = $doctor['image'] ?? '';
-                $doctor_content = $doctor['content'] ?? '';
+            <div
+                class="swiper doctors-main"
+                id="doctors-main-swiper"
+            >
 
-                $panel_id = 'panel-doctor-' . $index;
-                $active   = ($index === 0);
-                ?>
+                <div class="swiper-wrapper">
 
-                <div
-                    class="expert-panel"
-                    id="<?php echo esc_attr($panel_id); ?>"
-                    role="tabpanel"
-                    <?php echo !$active ? 'hidden' : ''; ?>
-                >
+                    <?php foreach ($doctors as $index => $doctor) : ?>
 
-                    <div class="expert-left">
+                        <?php
+                        $doctor_name    = $doctor['title'] ?? '';
+                        $doctor_image   = $doctor['image'] ?? '';
+                        $doctor_content = $doctor['content'] ?? '';
 
-                        <?php if ($doctor_image) : ?>
+                        $panel_id = 'panel-doctor-' . $index;
+                        $tab_id   = $panel_id . '-tab';
+                        ?>
 
-                            <?php get_image(
-                                $doctor_image,
-                                'doctor',
-                                $doctor_name ?: 'Doctor'
-                            ); ?>
+                        <div class="swiper-slide">
 
-                        <?php endif; ?>
+                            <div
+                                class="expert-panel"
+                                id="<?php echo esc_attr($panel_id); ?>"
+                                role="tabpanel"
+                                aria-labelledby="<?php echo esc_attr($tab_id); ?>"
+                            >
 
-                    </div>
+                                <!-- =================================================
+                                     DOCTOR IMAGE
+                                ================================================== -->
+
+                                <div class="expert-left">
+
+                                    <?php if ($doctor_image) : ?>
+
+                                        <?php
+                                        get_image(
+                                            $doctor_image,
+                                            'doctor',
+                                            $doctor_name ?: 'Doctor'
+                                        );
+                                        ?>
+
+                                    <?php endif; ?>
+
+                                </div>
 
 
-                    <div class="expert-right">
+                                <!-- =================================================
+                                     DOCTOR CONTENT
+                                ================================================== -->
 
-                        <?php if ($doctor_content) : ?>
+                                <div class="expert-right">
 
-                            <?php echo wp_kses_post($doctor_content); ?>
+                                    <?php if ($doctor_content) : ?>
 
-                        <?php endif; ?>
+                                        <?php echo wp_kses_post($doctor_content); ?>
 
-                    </div>
+                                    <?php endif; ?>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    <?php endforeach; ?>
 
                 </div>
 
-            <?php endforeach; ?>
+            </div>
 
         <?php endif; ?>
 

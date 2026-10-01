@@ -5,7 +5,11 @@
  */
 function theme_front_assets()
 {
-    // Bootstrap CSS
+    /*
+    |--------------------------------------------------------------------------
+    | Bootstrap CSS
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_style(
         'bootstrap',
         THEME_CSS . 'bootstrap.min.css',
@@ -14,7 +18,12 @@ function theme_front_assets()
         'screen'
     );
 
-    // Font Awesome
+
+    /*
+    |--------------------------------------------------------------------------
+    | Font Awesome
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_style(
         'fontawesome',
         THEME_CSS . 'fontawesome.all.min.css',
@@ -23,7 +32,12 @@ function theme_front_assets()
         'screen'
     );
 
-    // Google Fonts
+
+    /*
+    |--------------------------------------------------------------------------
+    | Google Fonts
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_style(
         'google-fonts',
         'https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap',
@@ -31,9 +45,12 @@ function theme_front_assets()
         null
     );
 
+
     /*
-     * Fancybox 6.1 CSS
-     */
+    |--------------------------------------------------------------------------
+    | Fancybox CSS - CDN
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_style(
         'fancybox',
         'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css',
@@ -41,19 +58,12 @@ function theme_front_assets()
         '6.1'
     );
 
-    /*
-     * Keep Fancybox above the sticky header
-     */
-    wp_add_inline_style(
-        'fancybox',
-        '.fancybox__container {
-            z-index: 20500 !important;
-        }'
-    );
 
     /*
-     * Main Theme CSS
-     */
+    |--------------------------------------------------------------------------
+    | Main Theme CSS
+    |--------------------------------------------------------------------------
+    */
     $theme_css_path = get_stylesheet_directory() . '/style.css';
 
     $theme_css_ver = file_exists($theme_css_path)
@@ -73,14 +83,20 @@ function theme_front_assets()
         'screen'
     );
 
-    /*
-     * WordPress jQuery
-     */
-    wp_enqueue_script('jquery');
 
     /*
-     * Bootstrap JS
-     */
+    |--------------------------------------------------------------------------
+    | jQuery
+    |--------------------------------------------------------------------------
+    */
+    wp_enqueue_script('jquery');
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Bootstrap JS
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_script(
         'bootstrap',
         THEME_JS . 'bootstrap.bundle.min.js',
@@ -89,9 +105,12 @@ function theme_front_assets()
         true
     );
 
+
     /*
-     * Fancybox 6.1 JS
-     */
+    |--------------------------------------------------------------------------
+    | Fancybox JS - CDN
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_script(
         'fancybox',
         'https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js',
@@ -100,14 +119,73 @@ function theme_front_assets()
         true
     );
 
-    // Custom theme JS
+    wp_enqueue_style(
+    'swiper',
+    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+    array(),
+    '11'
+    );
+
+    wp_enqueue_script(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11',
+        true
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom JS
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_script(
         'custom-js',
         THEME_JS . 'custom.js',
         array('fancybox'),
-        filemtime(get_stylesheet_directory() . '/../../assets/js/custom.js'),
+        '1.0.0',
         true
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Theme JavaScript Parameters
+    |--------------------------------------------------------------------------
+    */
+    wp_localize_script(
+        'custom-js',
+        'THEME_PARAMS',
+        array(
+            'STICKY_HEADER' => true,
+            'SOCIAL_MEDIA'  => ''
+        )
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Site Logo JavaScript Variable
+    |--------------------------------------------------------------------------
+    */
+    $custom_logo_id = get_theme_mod('custom_logo');
+
+    $site_logo = $custom_logo_id
+        ? wp_get_attachment_image_url($custom_logo_id, 'full')
+        : '';
+
+    wp_localize_script(
+        'custom-js',
+        'SITE_LOGO',
+        $site_logo
     );
 }
 
+
+/*
+|--------------------------------------------------------------------------
+| Hook
+|--------------------------------------------------------------------------
+*/
 add_action('wp_enqueue_scripts', 'theme_front_assets');
