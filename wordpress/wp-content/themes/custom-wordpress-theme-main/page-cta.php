@@ -54,7 +54,7 @@ $cta_link    = get_field('cta_link');
                 <?php if ($cta_link) : ?>
 
                     <a
-                        class="btn btn-gold"
+                        class="theme-gold"
                         href="<?php echo esc_url($cta_link['url']); ?>"
                         target="<?php echo esc_attr($cta_link['target'] ?: '_self'); ?>"
                         <?php if (!empty($cta_link['target']) && $cta_link['target'] === '_blank') : ?>

@@ -31,6 +31,7 @@ $right_menu           = get_field('right_menu', 'option');
         <div class="container">
 
             <!-- LEFT -->
+
             <div class="left">
 
                 <?php if ($left_menu) : ?>
@@ -39,14 +40,14 @@ $right_menu           = get_field('right_menu', 'option');
 
                         <?php
                         wp_nav_menu([
-                            'menu'        => $left_menu,
-                            'container'   => 'nav',
+                            'menu'            => $left_menu,
+                            'container'       => 'nav',
                             'container_class' => 'navbar navbar-expand-md p-0',
                             'container_aria_label' => 'Left navigation',
-                            'menu_class'  => 'menu navbar-nav',
-                            'fallback_cb' => false,
-                            'items_wrap'  => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
-                            'depth'       => 1,
+                            'menu_class'      => 'menu navbar-nav',
+                            'fallback_cb'     => false,
+                            'items_wrap'      => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
+                            'depth'           => 1,
                         ]);
                         ?>
 
@@ -58,17 +59,20 @@ $right_menu           = get_field('right_menu', 'option');
 
 
             <!-- LOGO -->
+
             <div class="logo-wrapper">
 
                 <a href="<?php echo esc_url(home_url('/')); ?>">
 
                     <?php if ($logo) : ?>
 
-                        <?php get_image(
+                        <?php
+                        get_image(
                             $logo,
                             'logo',
                             get_bloginfo('name')
-                        ); ?>
+                        );
+                        ?>
 
                     <?php endif; ?>
 
@@ -78,6 +82,7 @@ $right_menu           = get_field('right_menu', 'option');
 
 
             <!-- RIGHT -->
+
             <div class="right">
 
                 <?php if ($right_menu) : ?>
@@ -86,28 +91,33 @@ $right_menu           = get_field('right_menu', 'option');
 
                         <?php
                         wp_nav_menu([
-                            'menu'        => $right_menu,
-                            'container'   => 'nav',
+                            'menu'            => $right_menu,
+                            'container'       => 'nav',
                             'container_class' => 'navbar navbar-expand-md p-0',
                             'container_aria_label' => 'Right navigation',
-                            'menu_class'  => 'menu navbar-nav',
-                            'fallback_cb' => false,
-                            'items_wrap'  => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
-                            'depth'       => 1,
+                            'menu_class'      => 'menu navbar-nav',
+                            'fallback_cb'     => false,
+                            'items_wrap'      => '<ul id="%1$s" class="menu navbar-nav">%3$s</ul>',
+                            'depth'           => 1,
                         ]);
                         ?>
 
+
                         <!-- APPOINTMENT BUTTON -->
+
                         <a
-                            class="btn btn-gold"
+                            class="theme-gold"
                             href="<?php echo esc_url(home_url('/#cta')); ?>"
                         >
                             Schedule an appointment
                         </a>
+
                     </div>
 
                 <?php endif; ?>
 
             </div>
+
         </div>
+
     </header>

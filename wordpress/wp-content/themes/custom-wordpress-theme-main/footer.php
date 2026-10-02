@@ -1,63 +1,60 @@
 <?php
-/**
- * Footer
- */
 
 $footer_background = get_field('footer_background', 'option');
 $footer_logo       = get_field('footer_logo', 'option');
 $footer_copyright  = get_field('footer_copyright', 'option');
 $edm_logo          = get_field('edm_logo', 'option');
 
-$social           = get_field('social', 'option');
-$footer_mobile    = get_field('footer_mobile', 'option');
-$footer_email     = get_field('footer_email', 'option');
-$footer_location  = get_field('footer_location', 'option');
-$schedule         = get_field('schedule', 'option');
+$social          = get_field('social', 'option');
+$footer_mobile   = get_field('footer_mobile', 'option');
+$footer_email    = get_field('footer_email', 'option');
+$footer_location = get_field('footer_location', 'option');
+$schedule        = get_field('schedule', 'option');
 
-$footer_content   = get_field('footer_content', 'option');
-$footer_link      = get_field('footer_link', 'option');
+$footer_content = get_field('footer_content', 'option');
+$footer_link    = get_field('footer_link', 'option');
 ?>
 
 <footer class="footer">
 
     <?php if ($footer_background) : ?>
+
         <?php
-        echo wp_get_attachment_image(
+        get_image(
             $footer_background,
-            'full',
-            false,
-            array(
-                'class'       => 'footer-bg-image',
-                'alt'         => '',
-                'aria-hidden' => 'true',
-            )
+            'footer-bg-image',
+            ''
         );
         ?>
+
     <?php endif; ?>
+
 
     <div class="container">
 
         <div class="footer-content">
 
+
             <!-- =========================
                  LEFT
             ========================== -->
+
             <div class="footer-left">
 
                 <?php if ($footer_logo) : ?>
+
                     <div class="footer-logo-wrapper">
+
                         <?php
-                        echo wp_get_attachment_image(
+                        get_image(
                             $footer_logo,
-                            'full',
-                            false,
-                            array(
-                                'class' => 'footer-logo',
-                                'alt'   => 'The Cosmetic Dentists of Austin',
-                            )
+                            'footer-logo',
+                            'The Cosmetic Dentists of Austin'
                         );
                         ?>
+
                     </div>
+
                 <?php endif; ?>
 
 
@@ -96,9 +93,16 @@ $footer_link      = get_field('footer_link', 'option');
                                     <?php endif; ?>
                                     aria-label="<?php echo esc_attr($title ?: 'Social media'); ?>"
                                 >
+
                                     <?php if ($icon) : ?>
-                                        <i class="<?php echo esc_attr($icon); ?>" aria-hidden="true"></i>
+
+                                        <i
+                                            class="<?php echo esc_attr($icon); ?>"
+                                            aria-hidden="true"
+                                        ></i>
+
                                     <?php endif; ?>
+
                                 </a>
 
                             <?php endforeach; ?>
@@ -115,10 +119,13 @@ $footer_link      = get_field('footer_link', 'option');
                     <p class="footer-legal">
 
                         <?php if ($footer_copyright) : ?>
+
                             <span>
                                 <?php echo esc_html($footer_copyright); ?>
                             </span>
+
                         <?php endif; ?>
+
 
                         <?php if ($edm_logo) : ?>
 
@@ -127,14 +134,10 @@ $footer_link      = get_field('footer_link', 'option');
                             </span>
 
                             <?php
-                            echo wp_get_attachment_image(
+                            get_image(
                                 $edm_logo,
-                                'full',
-                                false,
-                                array(
-                                    'class' => 'footer-edm-logo',
-                                    'alt'   => 'EDM',
-                                )
+                                'footer-edm-logo',
+                                'EDM'
                             );
                             ?>
 
@@ -150,6 +153,7 @@ $footer_link      = get_field('footer_link', 'option');
             <!-- =========================
                  CONTACT
             ========================== -->
+
             <div class="footer-contact-column">
 
                 <?php if (!empty($footer_mobile)) : ?>
@@ -161,6 +165,9 @@ $footer_link      = get_field('footer_link', 'option');
                         <a
                             href="<?php echo esc_url($footer_mobile['url']); ?>"
                             target="<?php echo esc_attr($footer_mobile['target'] ?? '_self'); ?>"
+                            <?php if (($footer_mobile['target'] ?? '') === '_blank') : ?>
+                                rel="noopener noreferrer"
+                            <?php endif; ?>
                         >
                             <?php echo esc_html($footer_mobile['title']); ?>
                         </a>
@@ -194,6 +201,9 @@ $footer_link      = get_field('footer_link', 'option');
                         <a
                             href="<?php echo esc_url($footer_email['url']); ?>"
                             target="<?php echo esc_attr($footer_email['target'] ?? '_self'); ?>"
+                            <?php if (($footer_email['target'] ?? '') === '_blank') : ?>
+                                rel="noopener noreferrer"
+                            <?php endif; ?>
                         >
                             <?php echo esc_html($footer_email['title']); ?>
                         </a>
@@ -208,6 +218,7 @@ $footer_link      = get_field('footer_link', 'option');
             <!-- =========================
                  OFFICE HOURS
             ========================== -->
+
             <div class="footer-hours-column">
 
                 <?php if (!empty($schedule)) : ?>
@@ -221,8 +232,8 @@ $footer_link      = get_field('footer_link', 'option');
                             <?php foreach ($schedule as $day) : ?>
 
                                 <?php
-                                $day_name   = $day['day'] ?? '';
-                                $day_hours  = $day['hours'] ?? '';
+                                $day_name  = $day['day'] ?? '';
+                                $day_hours = $day['hours'] ?? '';
 
                                 if (!$day_name && !$day_hours) {
                                     continue;
@@ -255,6 +266,7 @@ $footer_link      = get_field('footer_link', 'option');
             <!-- =========================
                  CTA
             ========================== -->
+
             <div class="footer-right">
 
                 <div class="footer-cta">
@@ -272,7 +284,7 @@ $footer_link      = get_field('footer_link', 'option');
 
                         <a
                             href="<?php echo esc_url($footer_link['url']); ?>"
-                            class="btn btn-gold"
+                            class="theme-gold"
                             target="<?php echo esc_attr($footer_link['target'] ?? '_self'); ?>"
                             <?php if (($footer_link['target'] ?? '') === '_blank') : ?>
                                 rel="noopener noreferrer"
@@ -287,11 +299,14 @@ $footer_link      = get_field('footer_link', 'option');
 
             </div>
 
+
         </div>
 
     </div>
 
 </footer>
+
+
 <?php wp_footer(); ?>
 
 </body>

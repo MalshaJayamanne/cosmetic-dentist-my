@@ -10,37 +10,47 @@ $faqs      = get_field('faqs');
 
     <div class="container">
 
+        <!-- =====================================================
+             FAQ SECTION HEADING
+        ====================================================== -->
+
         <div class="section-head">
 
-            <div>
+            <?php if ($faq_title) : ?>
 
-                <?php if ($faq_title) : ?>
+                <?php echo wp_kses_post($faq_title); ?>
 
-                    <?php echo wp_kses_post($faq_title); ?>
-
-                <?php endif; ?>
+            <?php endif; ?>
 
 
-                <?php if ($faq_link) : ?>
+            <?php if ($faq_link) : ?>
 
-                    <a
-                        href="<?php echo esc_url($faq_link['url']); ?>"
-                        target="<?php echo esc_attr($faq_link['target'] ?: '_self'); ?>"
-                        class="btn btn-gold"
-                    >
-                        <?php echo esc_html($faq_link['title']); ?>
-                    </a>
+                <a
+                    href="<?php echo esc_url($faq_link['url']); ?>"
+                    target="<?php echo esc_attr($faq_link['target'] ?: '_self'); ?>"
+                    class="theme-gold"
+                    <?php if (!empty($faq_link['target']) && $faq_link['target'] === '_blank') : ?>
+                        rel="noopener noreferrer"
+                    <?php endif; ?>
+                >
+                    <?php echo esc_html($faq_link['title']); ?>
+                </a>
 
-                <?php endif; ?>
-
-            </div>
+            <?php endif; ?>
 
         </div>
 
 
-        <?php if ($faqs) : ?>
+        <!-- =====================================================
+             FAQ ACCORDION
+        ====================================================== -->
 
-            <div class="accordion faq-accordion" id="faqAccordion">
+        <?php if (!empty($faqs)) : ?>
+
+            <div
+                class="accordion faq-accordion"
+                id="faqAccordion"
+            >
 
                 <?php foreach ($faqs as $index => $faq) : ?>
 
@@ -58,6 +68,10 @@ $faqs      = get_field('faqs');
 
                     <div class="accordion-item">
 
+                        <!-- =================================================
+                             QUESTION
+                        ================================================== -->
+
                         <h3
                             class="accordion-header"
                             id="<?php echo esc_attr($heading_id); ?>"
@@ -71,22 +85,32 @@ $faqs      = get_field('faqs');
                                 aria-expanded="false"
                                 aria-controls="<?php echo esc_attr($collapse_id); ?>"
                             >
+
                                 <?php echo esc_html($question); ?>
+
                             </button>
 
                         </h3>
 
 
+                        <!-- =================================================
+                             ANSWER
+                        ================================================== -->
+
                         <div
-                            class="accordion-collapse collapse"
                             id="<?php echo esc_attr($collapse_id); ?>"
+                            class="accordion-collapse collapse"
                             aria-labelledby="<?php echo esc_attr($heading_id); ?>"
                             data-bs-parent="#faqAccordion"
                         >
 
                             <div class="accordion-body">
 
-                                <?php echo wp_kses_post($answer); ?>
+                                <?php if ($answer) : ?>
+
+                                    <?php echo wp_kses_post($answer); ?>
+
+                                <?php endif; ?>
 
                             </div>
 

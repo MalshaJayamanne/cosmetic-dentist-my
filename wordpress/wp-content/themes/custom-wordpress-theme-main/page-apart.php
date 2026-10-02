@@ -2,7 +2,6 @@
 
 $apart_image   = get_field('apart_image');
 $apart_content = get_field('apart_content');
-$apart_list    = get_field('apart_list');
 
 ?>
 
@@ -16,11 +15,13 @@ $apart_list    = get_field('apart_list');
 
                 <?php if ($apart_image) : ?>
 
-                    <?php get_image(
+                    <?php
+                    get_image(
                         $apart_image,
                         'apart',
                         'Patient enjoying a drink outdoors'
-                    ); ?>
+                    );
+                    ?>
 
                 <?php endif; ?>
 
@@ -32,33 +33,6 @@ $apart_list    = get_field('apart_list');
                 <?php if ($apart_content) : ?>
 
                     <?php echo wp_kses_post($apart_content); ?>
-
-                <?php endif; ?>
-
-
-                <?php if ($apart_list) : ?>
-
-                    <ul class="about-list">
-
-                        <?php
-                        $items = preg_split('/\r\n|\r|\n/', $apart_list);
-                        ?>
-
-                        <?php foreach ($items as $item) : ?>
-
-                            <?php $item = trim($item); ?>
-
-                            <?php if ($item) : ?>
-
-                                <li>
-                                    <?php echo esc_html($item); ?>
-                                </li>
-
-                            <?php endif; ?>
-
-                        <?php endforeach; ?>
-
-                    </ul>
 
                 <?php endif; ?>
 

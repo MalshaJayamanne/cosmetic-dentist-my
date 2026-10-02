@@ -5,44 +5,33 @@ $hero_content = get_field('hero_content');
 
 <section class="hero">
 
-    <!-- HERO IMAGE -->
-    <div class="hero-image">
+    <?php if ($hero_image) : ?>
 
-        <?php if ($hero_image) : ?>
+        <?php
+        get_image(
+            $hero_image,
+            'Patient smiling'
+        );
+        ?>
 
-            <?php
-            get_image(
-                $hero_image,
-                'hero',
-                'Patient smiling'
-            );
-            ?>
-
-        <?php endif; ?>
-
-    </div>
+    <?php endif; ?>
 
 
-    <!-- HERO CONTENT -->
     <div class="container">
 
         <div class="inner">
 
             <div class="content-wrapper">
 
-                <!-- HERO HEADING / CONTENT -->
-                <div class="hero-form">
+                <?php if ($hero_content) : ?>
 
-                    <?php if ($hero_content) : ?>
-
+                    <div class="hero-form">
                         <?php echo wp_kses_post($hero_content); ?>
+                    </div>
 
-                    <?php endif; ?>
-
-                </div>
+                <?php endif; ?>
 
 
-                <!-- HERO FORM -->
                 <div class="form-wrapper">
 
                     <form
@@ -52,7 +41,7 @@ $hero_content = get_field('hero_content');
                         method="post"
                     >
 
-                        <div class="mb-4 text-center">
+                        <div class="form-field">
 
                             <label
                                 class="screen-reader-text"
@@ -72,7 +61,7 @@ $hero_content = get_field('hero_content');
                         </div>
 
 
-                        <div class="mb-4 text-center">
+                        <div class="form-field">
 
                             <label
                                 class="screen-reader-text"
@@ -92,7 +81,7 @@ $hero_content = get_field('hero_content');
                         </div>
 
 
-                        <div class="mb-4 text-center">
+                        <div class="form-field">
 
                             <label
                                 class="screen-reader-text"
@@ -111,7 +100,7 @@ $hero_content = get_field('hero_content');
                         </div>
 
 
-                        <div class="mb-4 text-center">
+                        <div class="form-field">
 
                             <label
                                 class="screen-reader-text"
@@ -130,10 +119,10 @@ $hero_content = get_field('hero_content');
                         </div>
 
 
-                        <div>
+                        <div class="form-submit">
 
                             <button
-                                class="btn btn-gold"
+                                class="theme-gold"
                                 type="submit"
                             >
                                 Schedule an appointment

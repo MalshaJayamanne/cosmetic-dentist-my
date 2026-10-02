@@ -11,13 +11,11 @@ $process_steps   = get_field('process_steps');
         <!-- PROCESS HEADER -->
         <div class="title-wrapper">
 
-            <div class="process-head">
+            <div class="content-wrapper white-heading">
 
                 <?php if ($process_content) : ?>
 
-                    <div class="content-wrapper white-heading">
-                        <?php echo wp_kses_post($process_content); ?>
-                    </div>
+                    <?php echo wp_kses_post($process_content); ?>
 
                 <?php endif; ?>
 
@@ -26,7 +24,7 @@ $process_steps   = get_field('process_steps');
                 <?php if ($process_link) : ?>
 
                     <a
-                        class="btn btn-gold"
+                        class="theme-gold"
                         href="<?php echo esc_url($process_link['url']); ?>"
                         target="<?php echo esc_attr($process_link['target'] ?: '_self'); ?>"
                         <?php if (!empty($process_link['target']) && $process_link['target'] === '_blank') : ?>
@@ -46,48 +44,47 @@ $process_steps   = get_field('process_steps');
         <!-- PROCESS STEPS -->
         <?php if ($process_steps) : ?>
 
-            <div class="process-steps">
+            <div class="process-steps row">
 
-                <?php
-                $step_number = 1;
-                ?>
+                <?php $step_number = 1; ?>
 
                 <?php foreach ($process_steps as $step) : ?>
 
-                    <article
-                        class="step-card"
-                        id="step-<?php echo esc_attr($step_number); ?>"
-                    >
+                    <div class="col-12 col-lg-4">
 
-                        <!-- STEP NUMBER -->
-                        <span class="step-numbering">
-                            <?php echo esc_html($step_number); ?>
-                        </span>
+                        <div
+                            class="step-card"
+                            id="step-<?php echo esc_attr($step_number); ?>"
+                        >
+
+                            <span class="step-numbering">
+                                <?php echo esc_html($step_number); ?>
+                            </span>
+
+                            <div class="content">
+
+                                <?php if (!empty($step['title'])) : ?>
+
+                                    <h3>
+                                        <?php echo esc_html($step['title']); ?>
+                                    </h3>
+
+                                <?php endif; ?>
 
 
-                        <!-- STEP CONTENT -->
-                        <div class="content">
+                                <?php if (!empty($step['content'])) : ?>
 
-                            <?php if (!empty($step['title'])) : ?>
+                                    <div class="description">
+                                        <?php echo wp_kses_post($step['content']); ?>
+                                    </div>
 
-                                <h3>
-                                    <?php echo esc_html($step['title']); ?>
-                                </h3>
+                                <?php endif; ?>
 
-                            <?php endif; ?>
-
-
-                            <?php if (!empty($step['content'])) : ?>
-
-                                <p>
-                                    <?php echo wp_kses_post($step['content']); ?>
-                                </p>
-
-                            <?php endif; ?>
+                            </div>
 
                         </div>
 
-                    </article>
+                    </div>
 
                     <?php $step_number++; ?>
 

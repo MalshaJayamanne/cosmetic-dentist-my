@@ -78,9 +78,12 @@ $welcome_link    = get_field('welcome_link');
                     <?php if ($welcome_link) : ?>
 
                         <a
-                            class="btn btn-gold"
+                            class="theme-gold"
                             href="<?php echo esc_url($welcome_link['url']); ?>"
                             target="<?php echo esc_attr($welcome_link['target'] ?: '_self'); ?>"
+                            <?php if (!empty($welcome_link['target']) && $welcome_link['target'] === '_blank') : ?>
+                                rel="noopener noreferrer"
+                            <?php endif; ?>
                         >
                             <?php echo esc_html($welcome_link['title']); ?>
                         </a>

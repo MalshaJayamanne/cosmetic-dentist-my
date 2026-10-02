@@ -21,6 +21,27 @@
             "selected": 0
         },
         {
+            "key": "field_6ab6400cc0801",
+            "label": "Apart Item",
+            "name": "apart_item",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_6ab5fa88ce400",
             "label": "Image",
             "name": "hero_image",
@@ -52,7 +73,7 @@
             "name": "hero_content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "use <code>h1<\/code> for heading <br>\r\nuse <code>h5<\/code> for subheading",
+            "instructions": "use <code>h1<\/code> for heading",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -91,7 +112,7 @@
             "name": "process_content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Use <code>h2<\/code> for title <br>\r\nUse <code>h4<\/code> for subheading below the title.",
+            "instructions": "Use <code>h2<\/code> for title",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -685,7 +706,7 @@
             "name": "apart_content",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Use <code>h2<\/code> for title",
+            "instructions": "Use <code>h2<\/code> for title <br>\r\n\r\nUse <code> List <\/code> for items",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -699,27 +720,6 @@
             "toolbar": "full",
             "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_6ab63feac0800",
-            "label": "List",
-            "name": "apart_list",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
         },
         {
             "key": "field_6ab6047c6a74d",
@@ -745,7 +745,7 @@
             "name": "doctor_title",
             "aria-label": "",
             "type": "wysiwyg",
-            "instructions": "Use <code>h2<\/code> for title<br>\r\nUse <code>h4<\/code> for subheading below the title.",
+            "instructions": "Use <code>h2<\/code> for title",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1027,7 +1027,7 @@
                     "label": "Answer",
                     "name": "answer",
                     "aria-label": "",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1037,11 +1037,11 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "maxlength": "",
                     "allow_in_bindings": 0,
-                    "rows": "",
-                    "placeholder": "",
-                    "new_lines": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0,
                     "parent_repeater": "field_6ab606db6a758"
                 }
             ]
@@ -1068,5 +1068,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1790595138
+    "modified": 1790940466
 }
