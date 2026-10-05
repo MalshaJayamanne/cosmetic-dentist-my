@@ -252,7 +252,7 @@ img {
     display: none;
 }
 
- /* =========================================================
+/* =========================================================
    LARGE DESKTOP
 ========================================================= */
 
@@ -345,16 +345,12 @@ img {
 
     .main-header > .container {
         display: flex;
-
         width: 100%;
         max-width: 1400px;
-
         padding-right: 40px;
         padding-left: 40px;
-
         justify-content: space-between;
         align-items: center;
-
         gap: 20px;
     }
 
@@ -391,16 +387,11 @@ img {
 
     .main-header > .container {
         display: flex;
-
         width: 100%;
-
         padding-right: 25px;
         padding-left: 25px;
-
-        flex-direction: row;
         justify-content: space-between;
         align-items: center;
-
         gap: 15px;
     }
 
@@ -552,6 +543,7 @@ img {
 }
 
 .hero-form h1 {
+    margin-top: 1.5rem;
     margin-bottom: 1rem;
 
     font-size: 48px;
@@ -687,7 +679,6 @@ img {
     border: 0;
 }
 
-
 /* =========================================================
    HERO MOBILE
 ========================================================= */
@@ -696,13 +687,6 @@ img {
 
     .hero .content-wrapper {
         width: 100%;
-
-        background: rgba(0, 0, 0, .5);
-    }
-
-    .hero-form {
-        padding-right: 25px;
-        padding-left: 25px;
     }
 
     .hero .form-wrapper {
@@ -926,18 +910,30 @@ img {
         margin-bottom: 45px;
     }
 
+    .process .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .process .content-wrapper h2 {
         width: 100%;
         font-size: 36px;
     }
 
     .process .content-wrapper p {
-        flex: 1;
+        width: 100%;
+        flex: none;
         font-size: 20px;
+        margin-bottom: 20px;
     }
 
-    .process .theme-gold {
-        flex-shrink: 0;
+    .process .content-wrapper .theme-gold {
+        width: auto;
+    }
+
+    .process-steps {
+        row-gap: 25px;
     }
 
     .step-card {
@@ -997,6 +993,10 @@ img {
 
     .process .content-wrapper .theme-gold {
         width: auto;
+    }
+
+    .process-steps {
+        row-gap: 20px;
     }
 
     .step-card {
@@ -1062,6 +1062,7 @@ img {
     }
 
 }
+
 
 /* =========================================================
    WELCOME
@@ -1253,23 +1254,30 @@ img {
 @media (min-width: 768px) and (max-width: 991.98px) {
 
     .welcome-wrap {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .welcome-grid {
-        grid-template-columns: 1fr 1fr;
-        padding-top: 50px;
-        gap: 0;
+        grid-template-columns: 1fr;
+        padding-top: 10px;
+        gap: 25px;
     }
 
-    .welcome-left,
-    .welcome-left img,
-    .welcome-right {
+    .welcome-left {
+        width: 100%;
+        height: 500px;
+    }
+
+    .welcome-left img {
+        width: 100%;
         height: 500px;
     }
 
     .welcome-right {
+        width: 100%;
+        height: auto;
+        min-height: 500px;
         margin-top: 0;
         padding: 40px;
     }
@@ -1287,6 +1295,11 @@ img {
         letter-spacing: 10px;
     }
 
+    .welcome-right .theme-gold {
+        width: auto;
+        max-width: 250px;
+    }
+
 }
 
 /* =========================================================
@@ -1296,13 +1309,13 @@ img {
 @media (max-width: 767.98px) {
 
     .welcome-wrap {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
     }
 
     .welcome-grid {
         grid-template-columns: 1fr;
-        padding-top: 40px;
+        padding-top: 10px;
         gap: 30px;
     }
 
@@ -1329,6 +1342,7 @@ img {
     }
 
     .welcome-right .theme-gold {
+        width: auto;
         max-width: 250px;
     }
 
@@ -1445,7 +1459,6 @@ img {
     }
 
 }
-
 
 /* =========================================================
    SERVICES
@@ -1603,21 +1616,17 @@ img {
 }
 
 /* =========================================================
-   RESPONSIVE
-========================================================= */
-
-/* =========================================================
    LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
     .services {
-        padding-block: 5.5rem;
+        padding-block: 5rem;
     }
 
     .services .section-head {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .services .section-head h2 {
@@ -1629,7 +1638,7 @@ img {
     }
 
     .services-grid {
-        margin-top: 50px;
+        margin-top: 35px;
         row-gap: 1rem;
     }
 
@@ -1640,6 +1649,7 @@ img {
     .service-card-label h3 {
         font-size: 25px;
     }
+
 }
 
 
@@ -1650,11 +1660,11 @@ img {
 @media (min-width: 768px) and (max-width: 991.98px) {
 
     .services {
-        padding-block: 5rem;
+        padding-block: 4.5rem;
     }
 
     .services .section-head {
-        margin-bottom: 2.75rem;
+        margin-bottom: 2rem;
     }
 
     .services .section-head h2 {
@@ -1662,58 +1672,26 @@ img {
     }
 
     .services .section-head h4 {
-        font-size: 21px;
-    }
-
-    .services-grid {
-        margin-top: 45px;
-        row-gap: 1rem;
-    }
-
-    .service-card-label {
-        padding: 1.3rem 1rem 1.7rem;
-    }
-
-    .service-card-label h3 {
-        font-size: 24px;
-    }
-}
-
-
-/* =========================================================
-   LARGE MOBILE
-========================================================= */
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-    .services {
-        padding-block: 4.5rem;
-    }
-
-    .services .section-head {
-        margin-bottom: 2.5rem;
-    }
-
-    .services .section-head h2 {
-        font-size: 36px;
-    }
-
-    .services .section-head h4 {
         font-size: 20px;
     }
 
     .services-grid {
-        margin-top: 40px;
+        margin-top: 30px;
         row-gap: 1rem;
     }
 
+    .service-card {
+        aspect-ratio: 4 / 5;
+    }
+
     .service-card-label {
-        padding: 1.25rem 1rem 1.6rem;
+        padding: 1.2rem 1rem 1.5rem;
     }
 
     .service-card-label h3 {
         font-size: 23px;
     }
+
 }
 
 
@@ -1721,14 +1699,14 @@ img {
    MOBILE
 ========================================================= */
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
 
     .services {
         padding-block: 4rem;
     }
 
     .services .section-head {
-        margin-bottom: 2.25rem;
+        margin-bottom: 1.5rem;
     }
 
     .services .section-head h2 {
@@ -1737,23 +1715,28 @@ img {
     }
 
     .services .section-head h4 {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.4;
     }
 
     .services-grid {
-        margin-top: 35px;
+        margin-top: 20px;
         row-gap: 1rem;
     }
 
+    .service-card {
+        aspect-ratio: 4 / 5;
+    }
+
     .service-card-label {
-        padding: 1.2rem 1rem 1.5rem;
+        padding: 1rem 0.9rem 1.2rem;
     }
 
     .service-card-label h3 {
-        font-size: 22px;
-        line-height: 1.3;
+        font-size: 21px;
+        line-height: 1.25;
     }
+
 }
 
 
@@ -1764,11 +1747,7 @@ img {
 @media (max-width: 400px) {
 
     .services {
-        padding-block: 3.5rem;
-    }
-
-    .services .section-head {
-        margin-bottom: 2rem;
+        padding-block: 3rem;
     }
 
     .services .section-head h2 {
@@ -1779,55 +1758,21 @@ img {
         font-size: 17px;
     }
 
-    .services-grid {
-        margin-top: 30px;
-        row-gap: 1rem;
-    }
-
     .service-card {
+        aspect-ratio: 4 / 5;
         border-radius: 8px;
     }
 
     .service-card-label {
-        padding: 1rem 0.8rem 1.3rem;
+        padding: 0.9rem 0.8rem 1rem;
     }
 
     .service-card-label h3 {
         font-size: 20px;
     }
+
 }
 
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
-
-@media (max-width: 350px) {
-
-    .services {
-        padding-block: 3rem;
-    }
-
-    .services .section-head h2 {
-        font-size: 28px;
-    }
-
-    .services .section-head h4 {
-        font-size: 16px;
-    }
-
-    .services-grid {
-        margin-top: 25px;
-    }
-
-    .service-card-label {
-        padding: 0.9rem 0.7rem 1.1rem;
-    }
-
-    .service-card-label h3 {
-        font-size: 19px;
-    }
-}
 
 /* =========================================================
    CTA
@@ -1928,7 +1873,6 @@ img {
     align-self: flex-start;
 }
 
-
 /* =========================================================
    LARGE TABLET / SMALL DESKTOP
 ========================================================= */
@@ -1949,37 +1893,37 @@ img {
 @media (min-width: 768px) and (max-width: 991.98px) {
 
     .home-cta {
-        min-height: auto;
+        min-height: 500px;
+        position: relative;
     }
 
     .home-cta .image-wrapper {
-        position: relative;
-        top: auto;
-        right: auto;
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: 500px;
+        height: 100%;
     }
 
     .home-cta .image-wrapper::after {
         background: linear-gradient(
             to bottom,
-            rgba(183, 183, 183, 0) 45%,
-            rgba(183, 183, 183, 0.1) 100%
+            rgba(107, 106, 106, 0.03) 20%,
+            rgba(107, 106, 106, 0.33) 100%
         );
     }
 
-    .home-cta > .container {
-        min-height: auto;
-    }
-
+    .home-cta > .container,
     .home-cta .inner {
-        min-height: auto;
+        min-height: 500px;
+        position: relative;
+        z-index: 2;
     }
 
     .home-cta .content-wrapper {
-        max-width: 100%;
-        min-height: auto;
-        padding: 70px 50px;
+        max-width: 550px;
+        min-height: 500px;
+        padding: 60px 40px;
+        justify-content: center;
     }
 
     .home-cta .content-wrapper h2 {
@@ -2000,34 +1944,37 @@ img {
 @media (min-width: 576px) and (max-width: 767.98px) {
 
     .home-cta {
-        min-height: auto;
+        min-height: 420px;
+        position: relative;
     }
 
     .home-cta .image-wrapper {
-        position: relative;
-        top: auto;
-        right: auto;
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: 420px;
+        height: 100%;
     }
 
     .home-cta .image-wrapper::after {
         background: linear-gradient(
             to bottom,
-            rgba(183, 183, 183, 0) 40%,
-            rgba(183, 183, 183, 0.1) 100%
+            rgba(107, 106, 106, 0.03) 10%,
+            rgba(107, 106, 106, 0.33) 100%
         );
     }
 
     .home-cta > .container,
     .home-cta .inner {
-        min-height: auto;
+        min-height: 420px;
+        position: relative;
+        z-index: 2;
     }
 
     .home-cta .content-wrapper {
-        max-width: 100%;
-        min-height: auto;
-        padding: 60px 40px;
+        max-width: 500px;
+        min-height: 420px;
+        padding: 50px 30px;
+        justify-content: center;
     }
 
     .home-cta .content-wrapper h2 {
@@ -2048,34 +1995,37 @@ img {
 @media (max-width: 575.98px) {
 
     .home-cta {
-        min-height: auto;
+        min-height: 350px;
+        position: relative;
     }
 
     .home-cta .image-wrapper {
-        position: relative;
-        top: auto;
-        right: auto;
+        position: absolute;
+        inset: 0;
         width: 100%;
-        height: 350px;
+        height: 100%;
     }
 
     .home-cta .image-wrapper::after {
         background: linear-gradient(
             to bottom,
-            rgba(183, 183, 183, 0) 35%,
-            rgba(183, 183, 183, 0.1) 100%
+            rgba(107, 106, 106, 0.03) 10%,
+            rgba(107, 106, 106, 0.33) 100%
         );
     }
 
     .home-cta > .container,
     .home-cta .inner {
-        min-height: auto;
+        min-height: 350px;
+        position: relative;
+        z-index: 2;
     }
 
     .home-cta .content-wrapper {
         max-width: 100%;
-        min-height: auto;
-        padding: 60px 25px;
+        min-height: 350px;
+        padding: 45px 25px;
+        justify-content: center;
     }
 
     .home-cta .content-wrapper h2 {
@@ -2097,12 +2047,18 @@ img {
 
 @media (max-width: 400px) {
 
-    .home-cta .image-wrapper {
-        height: 300px;
+    .home-cta {
+        min-height: 300px;
+    }
+
+    .home-cta > .container,
+    .home-cta .inner {
+        min-height: 300px;
     }
 
     .home-cta .content-wrapper {
-        padding: 50px 20px;
+        min-height: 300px;
+        padding: 40px 20px;
     }
 
     .home-cta .content-wrapper h2 {
@@ -2240,12 +2196,27 @@ img {
 /* =========================================================
    RESPONSIVE
 ========================================================= */
-
 /* =========================================================
    LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
 @media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .testimonials {
+        padding-block: 5rem;
+    }
+
+    .testimonials .section-head {
+        margin-bottom: 2.5rem;
+    }
+
+    .testimonials .section-head h2 {
+        font-size: 40px;
+    }
+
+    .testimonials .section-head h4 {
+        font-size: 21px;
+    }
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2261,19 +2232,21 @@ img {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-    .video-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+    .testimonials {
+        padding-block: 4.5rem;
     }
 
-}
+    .testimonials .section-head {
+        margin-bottom: 2rem;
+    }
 
+    .testimonials .section-head h2 {
+        font-size: 38px;
+    }
 
-/* =========================================================
-   LARGE MOBILE
-========================================================= */
-
-@media (min-width: 576px) and (max-width: 767.98px) {
+    .testimonials .section-head h4 {
+        font-size: 20px;
+    }
 
     .video-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2287,7 +2260,25 @@ img {
    MOBILE
 ========================================================= */
 
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
+
+    .testimonials {
+        padding-block: 4rem;
+    }
+
+    .testimonials .section-head {
+        margin-bottom: 1.5rem;
+    }
+
+    .testimonials .section-head h2 {
+        font-size: 34px;
+        line-height: 1.15;
+    }
+
+    .testimonials .section-head h4 {
+        font-size: 18px;
+        line-height: 1.4;
+    }
 
     .video-grid {
         grid-template-columns: 1fr;
@@ -2303,23 +2294,20 @@ img {
 
 @media (max-width: 400px) {
 
-    .video-grid {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
+    .testimonials {
+        padding-block: 3rem;
     }
 
-}
+    .testimonials .section-head h2 {
+        font-size: 30px;
+    }
 
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
-
-@media (max-width: 350px) {
+    .testimonials .section-head h4 {
+        font-size: 17px;
+    }
 
     .video-grid {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
+        gap: 0.85rem;
     }
 
 }
@@ -2384,6 +2372,185 @@ img {
 .apart-right ul li {
     margin-bottom: 10px;
     padding-left: 0;
+}
+
+/* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    .apart-section {
+        padding-bottom: 90px;
+    }
+
+    .apart {
+        max-height: 550px;
+    }
+
+    .apart-right {
+        padding: 0 40px 60px;
+        margin-top: 40px;
+    }
+
+    .apart-right h2 {
+        font-size: 40px;
+    }
+
+    .apart-right p {
+        font-size: 15px;
+    }
+
+    .apart-right ul {
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .apart-section {
+        padding-top: 40px;
+        padding-bottom: 70px;
+    }
+
+    .apart {
+        grid-template-columns: 1fr;
+        max-height: none;
+    }
+
+    .apart-left {
+        width: 100%;
+        height: 450px;
+    }
+
+    .apart-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .apart-right {
+        padding: 45px 40px 50px;
+        margin-top: 0;
+    }
+
+    .apart-right h2 {
+        font-size: 38px;
+        margin-bottom: 15px;
+    }
+
+    .apart-right p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .apart-right ul {
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .apart-section {
+        padding-top: 30px;
+        padding-bottom: 60px;
+    }
+
+    .apart {
+        grid-template-columns: 1fr;
+        max-height: none;
+        border-radius: 18px;
+    }
+
+    .apart-left {
+        width: 100%;
+        height: 400px;
+    }
+
+    .apart-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .apart-right {
+        padding: 40px 30px 45px;
+        margin-top: 0;
+    }
+
+    .apart-right h2 {
+        font-size: 34px;
+        line-height: 1.15;
+        margin-bottom: 15px;
+    }
+
+    .apart-right p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .apart-right ul {
+        font-size: 15px;
+        line-height: 1.5;
+        padding-left: 0;
+    }
+
+    .apart-right ul li {
+        margin-bottom: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .apart-section {
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+
+    .apart {
+        border-radius: 16px;
+    }
+
+    .apart-left {
+        height: 350px;
+    }
+
+    .apart-right {
+        padding: 35px 25px 40px;
+    }
+
+    .apart-right h2 {
+        font-size: 30px;
+    }
+
+    .apart-right p {
+        font-size: 14px;
+    }
+
+    .apart-right ul {
+        font-size: 14px;
+    }
+
 }
 
 /* =========================================================
@@ -2521,7 +2688,8 @@ img {
 
 .expert-left {
     width: 100%;
-    height: 575px;
+    height: auto;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
@@ -2584,7 +2752,6 @@ img {
     margin: 0;
 }
 
-
 /* =========================================================
    LARGE TABLET / SMALL DESKTOP
 ========================================================= */
@@ -2592,7 +2759,7 @@ img {
 @media (min-width: 992px) and (max-width: 1199.98px) {
 
     .experts {
-        padding-block: 5.5rem;
+        padding-block: 0.5rem;
     }
 
     .experts .section-head {
@@ -2617,13 +2784,25 @@ img {
 
     .expert-panel {
         min-height: 500px;
-    }
-
-    .expert-left {
         height: 500px;
     }
 
+    .expert-left {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .expert-left img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
     .expert-right {
+        height: 100%;
         padding: 60px 50px;
     }
 
@@ -2644,88 +2823,28 @@ img {
 
 @media (min-width: 768px) and (max-width: 991.98px) {
 
-    .experts {
-        padding-block: 5rem;
-    }
-
     .experts .section-head {
-        margin-bottom: 2.75rem;
-    }
-
-    .experts .section-head h2 {
-        font-size: 38px;
-    }
-
-    .experts .section-head p {
-        font-size: 21px;
+        text-align: center;
     }
 
     .expert-tabs {
-        gap: 18px;
-        margin-bottom: 45px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 30px;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        text-align: center;
     }
 
     .expert-tab {
-        font-size: 19px;
+        font-size: 18px;
+        text-align: center;
     }
 
-    .expert-panel {
-        min-height: 500px;
-    }
-
-    .expert-left {
-        height: 500px;
-    }
-
-    .expert-right {
-        padding: 50px 35px;
-    }
-
-    .expert-right h2 {
-        font-size: 38px;
-    }
-
-    .expert-right h3 {
-        font-size: 21px;
-        margin-bottom: 1.25rem;
-    }
-
-    .expert-right p {
-        font-size: 15px;
-    }
-
-}
-
-
-/* =========================================================
-   SMALL TABLET / LARGE MOBILE
-========================================================= */
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-    .experts {
-        padding-block: 4.5rem;
-    }
-
-    .experts .section-head {
-        margin-bottom: 2.5rem;
-    }
-
-    .experts .section-head h2 {
-        font-size: 36px;
-    }
-
-    .experts .section-head p {
-        font-size: 20px;
-    }
-
-    .expert-tabs {
-        gap: 15px;
-        margin-bottom: 40px;
-    }
-
-    .expert-tab {
-        font-size: 17px;
+    .expert-tab.active {
+        flex-basis: 100%;
+        text-align: center;
     }
 
     .expert-panel {
@@ -2734,24 +2853,28 @@ img {
     }
 
     .expert-left {
+        width: 100%;
         height: 450px;
+        overflow: hidden;
+    }
+
+    .expert-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .expert-right {
-        min-height: 400px;
-        padding: 45px 35px;
+        min-height: auto;
+        padding: 45px 40px 50px;
+        text-align: center;
     }
 
-    .expert-right h2 {
-        font-size: 36px;
-    }
-
-    .expert-right h3 {
-        font-size: 21px;
-    }
-
+    .expert-right h2,
+    .expert-right h3,
     .expert-right p {
-        font-size: 15px;
+        text-align: center;
     }
 
 }
@@ -2761,80 +2884,64 @@ img {
    MOBILE
 ========================================================= */
 
-@media (max-width: 575.98px) {
-
-    .experts {
-        padding-block: 4rem;
-    }
+@media (max-width: 767.98px) {
 
     .experts .section-head {
-        margin-bottom: 2.25rem;
-    }
-
-    .experts .section-head h2 {
-        font-size: 34px;
-        line-height: 1.15;
-    }
-
-    .experts .section-head p {
-        font-size: 19px;
-        line-height: 1.4;
+        text-align: center;
     }
 
     .expert-tabs {
-        justify-content: flex-start;
-        gap: 18px;
-
-        margin-bottom: 35px;
-
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        padding-bottom: 5px;
-
-        scrollbar-width: none;
-    }
-
-    .expert-tabs::-webkit-scrollbar {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 20px;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        text-align: center;
     }
 
     .expert-tab {
         flex: 0 0 auto;
         font-size: 16px;
+        text-align: center;
+    }
+
+    .expert-tab.active {
+        flex-basis: 100%;
+        text-align: center;
     }
 
     .expert-panel {
         grid-template-columns: 1fr;
         min-height: auto;
-        border-radius: 16px;
     }
 
     .expert-left {
+        width: 100%;
         height: 400px;
+        overflow: hidden;
+    }
+
+    .expert-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .expert-right {
-        min-height: 380px;
-        padding: 35px 25px;
+        min-height: auto;
+        padding: 35px 30px 40px;
+        text-align: center;
     }
 
-    .expert-right h2 {
-        font-size: 32px;
-    }
-
-    .expert-right h3 {
-        font-size: 20px;
-        margin-bottom: 1rem;
-    }
-
+    .expert-right h2,
+    .expert-right h3,
     .expert-right p {
-        font-size: 14px;
-        line-height: 1.6;
+        text-align: center;
     }
 
 }
-
 
 /* =========================================================
    SMALL MOBILE
@@ -2842,99 +2949,22 @@ img {
 
 @media (max-width: 400px) {
 
-    .experts {
-        padding-block: 3.5rem;
-    }
-
-    .experts .section-head {
-        margin-bottom: 2rem;
-    }
-
-    .experts .section-head h2 {
-        font-size: 30px;
-    }
-
-    .experts .section-head p {
-        font-size: 17px;
-    }
-
-    .expert-tabs {
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-
-    .expert-tab {
-        font-size: 14px;
-    }
-
-    .expert-panel {
-        border-radius: 14px;
-    }
-
     .expert-left {
         height: 350px;
     }
 
     .expert-right {
-        min-height: 350px;
-        padding: 30px 20px;
+        padding: 30px 25px 35px;
     }
 
-    .expert-right h2 {
-        font-size: 29px;
-    }
-
-    .expert-right h3 {
-        font-size: 19px;
-    }
-
+    .expert-right h2,
+    .expert-right h3,
     .expert-right p {
-        font-size: 14px;
+        text-align: center;
     }
 
 }
 
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 350px) {
-
-    .experts {
-        padding-block: 3rem;
-    }
-
-    .experts .section-head h2 {
-        font-size: 28px;
-    }
-
-    .experts .section-head p {
-        font-size: 16px;
-    }
-
-    .expert-tab {
-        font-size: 13px;
-    }
-
-    .expert-left {
-        height: 320px;
-    }
-
-    .expert-right {
-        min-height: 320px;
-        padding: 25px 18px;
-    }
-
-    .expert-right h2 {
-        font-size: 27px;
-    }
-
-    .expert-right h3 {
-        font-size: 18px;
-    }
-
-}
 
  /* =========================================================
    GALLERY
@@ -3114,13 +3144,11 @@ img {
     transform: scale(1.03);
 }
 
-
 /* =========================================================
    LARGE TABLET / SMALL DESKTOP
-   3 COLUMNS
 ========================================================= */
 
-@media (max-width: 1199.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
 
     .gallery {
         padding-block: 5.5rem;
@@ -3148,7 +3176,6 @@ img {
 
 /* =========================================================
    TABLET
-   3 COLUMNS
 ========================================================= */
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -3158,7 +3185,7 @@ img {
     }
 
     .gallery .section-head {
-        margin-bottom: 2.75rem;
+        margin-bottom: 2.5rem;
     }
 
     .gallery .section-head h2 {
@@ -3166,10 +3193,11 @@ img {
     }
 
     .gallery .section-head p {
-        font-size: 21px;
+        font-size: 20px;
     }
 
     .image-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 15px;
     }
 
@@ -3178,7 +3206,6 @@ img {
 
 /* =========================================================
    MOBILE
-   2 COLUMNS
 ========================================================= */
 
 @media (max-width: 767.98px) {
@@ -3188,7 +3215,7 @@ img {
     }
 
     .gallery .section-head {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
 
     .gallery .section-head h2 {
@@ -3197,7 +3224,7 @@ img {
     }
 
     .gallery .section-head p {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.4;
     }
 
@@ -3213,7 +3240,6 @@ img {
     .gallery-overlay i {
         width: 2.5rem;
         height: 2.5rem;
-
         font-size: 2.5rem;
     }
 
@@ -3227,11 +3253,7 @@ img {
 @media (max-width: 400px) {
 
     .gallery {
-        padding-block: 3.5rem;
-    }
-
-    .gallery .section-head {
-        margin-bottom: 2rem;
+        padding-block: 0.5rem;
     }
 
     .gallery .section-head h2 {
@@ -3253,41 +3275,10 @@ img {
     .gallery-overlay i {
         width: 2rem;
         height: 2rem;
-
         font-size: 2rem;
     }
 
 }
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 350px) {
-
-    .gallery {
-        padding-block: 3rem;
-    }
-
-    .gallery .section-head h2 {
-        font-size: 28px;
-    }
-
-    .gallery .section-head p {
-        font-size: 16px;
-    }
-
-    .image-list {
-        gap: 10px;
-    }
-
-    .image-item {
-        border-radius: 10px;
-    }
-
-}
-
 
 /* =========================================================
    FAQ
@@ -3532,23 +3523,22 @@ img {
     color: #323232;
 }
 
-
 /* =========================================================
-   TABLET
+   LARGE TABLET / SMALL DESKTOP
 ========================================================= */
 
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 992px) and (max-width: 1199.98px) {
 
     .faq {
-        padding-block: 5rem 4rem;
+        padding-block: 0.5rem;
     }
 
     .faq .section-head {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
     }
 
     .faq .section-head h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
     .faq .section-head p {
@@ -3561,8 +3551,44 @@ img {
     }
 
     .faq-accordion .accordion-body {
-        padding: 0 1.5rem 1.4rem;
+        padding: 1rem 1.5rem 1.4rem;
         font-size: 0.95rem;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .faq {
+        padding-block: 0.5rem;
+    }
+
+    .faq .section-head {
+        margin-bottom: 2.5rem;
+    }
+
+    .faq .section-head h2 {
+        font-size: 38px;
+    }
+
+    .faq .section-head p {
+        font-size: 20px;
+    }
+
+    .faq-accordion .accordion-button {
+        font-size: 1rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .faq-accordion .accordion-body {
+        padding: 1rem 1.5rem 1.4rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
 
 }
@@ -3575,11 +3601,11 @@ img {
 @media (max-width: 767.98px) {
 
     .faq {
-        padding-block: 4rem 3rem;
+        padding-block: 0.5rem 0.5rem;
     }
 
     .faq .section-head {
-        margin-bottom: 2.5rem;
+        margin-bottom: 2rem;
     }
 
     .faq .section-head h2 {
@@ -3588,7 +3614,7 @@ img {
     }
 
     .faq .section-head p {
-        font-size: 19px;
+        font-size: 18px;
         line-height: 1.4;
     }
 
@@ -3599,13 +3625,11 @@ img {
     .faq-accordion .accordion-button {
         font-size: 1rem;
         line-height: 1.4;
-
-        padding: 1.25rem;
+        padding: 1.2rem 1.25rem;
     }
 
     .faq-accordion .accordion-body {
-        padding: 0 1.25rem 1.25rem;
-
+        padding: 1rem 1.25rem 1.25rem;
         font-size: 0.95rem;
         line-height: 1.65;
     }
@@ -3624,11 +3648,7 @@ img {
 @media (max-width: 400px) {
 
     .faq {
-        padding-block: 3.5rem 2.5rem;
-    }
-
-    .faq .section-head {
-        margin-bottom: 2rem;
+        padding-block: 0.5rem 0.5rem;
     }
 
     .faq .section-head h2 {
@@ -3645,11 +3665,13 @@ img {
     }
 
     .faq-accordion .accordion-body {
-        padding: 0 1rem 1.1rem;
+        padding: 0.9rem 1rem 1.1rem;
         font-size: 0.9rem;
     }
 
 }
+
+
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -3985,7 +4007,6 @@ img {
 
 .office-hours li span:last-child {
     white-space: nowrap;
-
     text-align: right;
 }
 
@@ -4088,124 +4109,22 @@ img {
     text-align: center;
 }
 
-
 /* =========================================================
-   LARGE DESKTOP
+   FOOTER - RESPONSIVE
 ========================================================= */
 
-@media (min-width: 1400px) {
-
-    .footer-content {
-        gap: 30px;
-    }
-
-}
-
-
-/* =========================================================
-   1200px - 1399px
-========================================================= */
-
-@media (max-width: 1399.98px) {
-
-    .footer-content {
-        grid-template-columns:
-            minmax(0, 1.15fr)
-            minmax(0, 1fr)
-            minmax(0, 1fr)
-            minmax(250px, 1.25fr);
-
-        gap: 20px;
-    }
-
-    .footer-cta-content h2,
-    .footer-cta h2 {
-        font-size: 34px;
-        line-height: 1.15;
-    }
-
-    .footer-cta-content h4,
-    .footer-cta h4,
-    .footer-cta-content p {
-        font-size: 18px;
-    }
-
-}
-
-
-/* =========================================================
-   TABLET / SMALL LAPTOP
-========================================================= */
-
-@media (max-width: 1099.98px) {
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1199.98px) {
 
     .footer {
         padding-block: 4rem;
-    }
-
-    .footer-bg-image {
-        width: 45%;
-    }
-
-    .footer-content {
-        grid-template-columns: 1fr 1fr;
-
-        gap: 45px 30px;
-    }
-
-    .footer-left {
-        grid-column: 1;
-    }
-
-    .footer-contact-column {
-        grid-column: 2;
-    }
-
-    .footer-hours-column {
-        grid-column: 1;
-    }
-
-    .footer-right {
-        grid-column: 2;
-    }
-
-    .footer-cta {
-        margin-top: 0;
-
-        padding: 1.5rem;
-
-        max-width: 100%;
-    }
-
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 767.98px) {
-
-    .footer {
-        padding-block: 4rem;
-
-        margin-top: 50px;
-    }
-
-    .footer-bg-image {
-        width: 100%;
-        height: 50%;
-
-        top: auto;
-        bottom: 0;
-
-        opacity: 0.12;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
-
-        gap: 35px;
+        gap: 40px;
+        text-align: center;
+        justify-items: center;
     }
 
     .footer-left,
@@ -4213,204 +4132,116 @@ img {
     .footer-hours-column,
     .footer-right {
         grid-column: auto;
-
         width: 100%;
+        max-width: 600px;
+        text-align: center;
     }
 
     .footer-left {
         align-items: center;
-
-        text-align: center;
     }
 
-    .footer-logo {
-        height: auto;
-
-        width: auto;
-
-        max-width: 220px;
+    .footer-social,
+    .footer-social-wrapper {
+        justify-content: center;
     }
 
-    .footer-social {
-        margin-bottom: 1.25rem;
+    .office-hours {
+        width: fit-content;
+        margin: 0 auto;
     }
 
-    /* Contact fields */
-    .footer-contact-column .footer-item {
-        margin-bottom: 2.25rem;
+    .office-hours li {
+        grid-template-columns: auto auto;
     }
 
-    .footer-contact-column .footer-item:last-child {
-        margin-bottom: 0;
+    .office-hours li span {
+        text-align: center !important;
     }
 
     .footer-cta {
-        width: 100%;
-
-        max-width: 500px;
-
         margin: 0 auto;
-
-        padding: 1rem 0;
-    }
-
-    .footer-cta-content h2,
-    .footer-cta h2 {
-        font-size: 34px;
-
-        line-height: 1.15;
-    }
-
-    .footer-cta-content h4,
-    .footer-cta h4,
-    .footer-cta-content p {
-        font-size: 18px;
+        text-align: center;
     }
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* MOBILE */
+@media (max-width: 767.98px) {
 
+    .footer {
+        padding-block: 4rem;
+        margin-top: 50px;
+    }
+
+    .footer-bg-image {
+        width: 100%;
+        height: 50%;
+        top: auto;
+        bottom: 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .footer-left,
+    .footer-contact-column,
+    .footer-hours-column,
+    .footer-right {
+        grid-column: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-left {
+        align-items: center;
+    }
+
+    .footer-social,
+    .footer-social-wrapper {
+        justify-content: center;
+    }
+
+    .office-hours {
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .office-hours li {
+        grid-template-columns: auto auto;
+    }
+
+    .office-hours li span {
+        text-align: center !important;
+    }
+
+    .footer-cta {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+}
+
+
+/* SMALL MOBILE */
 @media (max-width: 575.98px) {
 
     .footer {
         padding-block: 3.5rem;
-
         margin-top: 40px;
     }
 
-    .footer-logo {
-        max-width: 190px;
-    }
-
-    .footer-social {
-        gap: 0.75rem;
-    }
-
-    .footer-social > span {
-        font-size: 16px;
-    }
-
-    .footer-social-wrapper {
-        gap: 0.75rem;
-    }
-
-    .footer-social-wrapper a {
-        width: 24px;
-        height: 24px;
-    }
-
-    .footer-social-wrapper a i {
-        font-size: 17px;
-    }
-
-    .footer-legal {
-        font-size: 11px;
-
-        flex-wrap: nowrap;
-
-        gap: 0.25rem;
-    }
-
-    .footer-website-by {
-        margin-left: 0;
-    }
-
-    .footer-edm-logo {
-        height: 26px;
-
-        max-width: 55px;
-
-        margin-left: 0;
-    }
-
-    /* Keep contact fields separated */
-    .footer-contact-column .footer-item {
-        margin-bottom: 2.25rem;
-    }
-
-    .footer-contact-column .footer-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .footer-item h5 {
-        font-size: 13px;
-
-        margin-bottom: 0.75rem;
-    }
-
-    .footer-item p,
-    .footer-item a,
-    .office-hours li {
-        font-size: 13px;
-    }
-
-    .office-hours li {
-        grid-template-columns: 1fr auto;
-
-        gap: 1rem;
-
-        padding-block: 0.55rem;
-    }
-
-    .footer-cta-content h2,
-    .footer-cta h2 {
-        font-size: 30px;
-    }
-
-    .footer-cta-content h4,
-    .footer-cta h4,
-    .footer-cta-content p {
-        font-size: 16px;
+    .office-hours {
+        max-width: 100%;
     }
 
     .footer-cta .theme-gold {
         width: 100%;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .footer-logo {
-        max-width: 170px;
-    }
-
-    .footer-social {
-        flex-wrap: wrap;
-
-        row-gap: 12px;
-    }
-
-    .footer-social > span {
-        width: 100%;
-    }
-
-    .footer-legal {
-        flex-direction: row;
-
-        flex-wrap: nowrap;
-
-        gap: 0.2rem;
-    }
-
-    .footer-edm-logo {
-        height: 24px;
-
-        max-width: 50px;
-    }
-
-    .footer-cta-content h2,
-    .footer-cta h2 {
-        font-size: 28px;
     }
 
 }
