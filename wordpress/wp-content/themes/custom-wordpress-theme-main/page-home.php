@@ -347,6 +347,7 @@ $welcome_link    = get_field('welcome_link');
 
 </section>
 
+
 <?php
 
 $service_title = get_field('service_title');
@@ -371,94 +372,106 @@ $services      = get_field('services');
         <!-- SERVICES -->
         <?php if ($services) : ?>
 
-            <div class="services-grid row">
+            <div class="services-swiper swiper">
 
-                <?php foreach ($services as $service) : ?>
+                <div class="swiper-wrapper">
 
-                    <?php
-                    $service_image = $service['image'];
-                    $service_name  = $service['title'];
-                    $service_link  = $service['link'];
-                    ?>
+                    <?php for ($i = 0; $i < 2; $i++) : ?>
 
-                    <div class="col-12 col-md-6 col-lg-4">
+                        <?php foreach ($services as $service) : ?>
 
-                        <div class="service-card">
+                            <?php
+                            $service_image = $service['image'];
+                            $service_name  = $service['title'];
+                            $service_link  = $service['link'];
+                            ?>
 
-                            <!-- SERVICE IMAGE -->
-                            <?php if ($service_image) : ?>
+                            <div class="swiper-slide">
 
-                                <?php if ($service_link) : ?>
+                                <div class="service-card">
 
-                                    <a
-                                        class="service-card-image-link"
-                                        href="<?php echo esc_url($service_link['url']); ?>"
-                                        target="<?php echo esc_attr($service_link['target'] ?: '_self'); ?>"
-                                        <?php if (!empty($service_link['target']) && $service_link['target'] === '_blank') : ?>
-                                            rel="noopener noreferrer"
-                                        <?php endif; ?>
-                                    >
-                                        <?php
-                                        get_image(
-                                            $service_image,
-                                            'service',
-                                            $service_name ?: 'Cosmetic dentistry service'
-                                        );
-                                        ?>
-                                    </a>
+                                    <!-- SERVICE IMAGE -->
+                                    <?php if ($service_image) : ?>
 
-                                <?php else : ?>
+                                        <?php if ($service_link) : ?>
 
-                                    <?php
-                                    get_image(
-                                        $service_image,
-                                        'service',
-                                        $service_name ?: 'Cosmetic dentistry service'
-                                    );
-                                    ?>
-
-                                <?php endif; ?>
-
-                            <?php endif; ?>
-
-
-                            <!-- SERVICE TITLE -->
-                            <?php if ($service_name) : ?>
-
-                                <div class="service-card-label">
-
-                                    <?php if ($service_link) : ?>
-
-                                        <h3>
                                             <a
-                                                class="service-card-title"
+                                                class="service-card-image-link"
                                                 href="<?php echo esc_url($service_link['url']); ?>"
                                                 target="<?php echo esc_attr($service_link['target'] ?: '_self'); ?>"
                                                 <?php if (!empty($service_link['target']) && $service_link['target'] === '_blank') : ?>
                                                     rel="noopener noreferrer"
                                                 <?php endif; ?>
                                             >
-                                                <?php echo esc_html($service_name); ?>
+                                                <?php
+                                                get_image(
+                                                    $service_image,
+                                                    'service',
+                                                    $service_name ?: 'Cosmetic dentistry service'
+                                                );
+                                                ?>
                                             </a>
-                                        </h3>
 
-                                    <?php else : ?>
+                                        <?php else : ?>
 
-                                        <h3>
-                                            <?php echo esc_html($service_name); ?>
-                                        </h3>
+                                            <?php
+                                            get_image(
+                                                $service_image,
+                                                'service',
+                                                $service_name ?: 'Cosmetic dentistry service'
+                                            );
+                                            ?>
+
+                                        <?php endif; ?>
+
+                                    <?php endif; ?>
+
+
+                                    <!-- SERVICE TITLE -->
+                                    <?php if ($service_name) : ?>
+
+                                        <div class="service-card-label">
+
+                                            <?php if ($service_link) : ?>
+
+                                                <h3>
+                                                    <a
+                                                        class="service-card-title"
+                                                        href="<?php echo esc_url($service_link['url']); ?>"
+                                                        target="<?php echo esc_attr($service_link['target'] ?: '_self'); ?>"
+                                                        <?php if (!empty($service_link['target']) && $service_link['target'] === '_blank') : ?>
+                                                            rel="noopener noreferrer"
+                                                        <?php endif; ?>
+                                                    >
+                                                        <?php echo esc_html($service_name); ?>
+                                                    </a>
+                                                </h3>
+
+                                            <?php else : ?>
+
+                                                <h3>
+                                                    <?php echo esc_html($service_name); ?>
+                                                </h3>
+
+                                            <?php endif; ?>
+
+                                        </div>
 
                                     <?php endif; ?>
 
                                 </div>
 
-                            <?php endif; ?>
+                            </div>
 
-                        </div>
+                        <?php endforeach; ?>
 
-                    </div>
+                    <?php endfor; ?>
 
-                <?php endforeach; ?>
+                </div>
+
+                <!-- SWIPER ARROWS -->
+                <div class="swiper-button-prev services-prev"></div>
+                <div class="swiper-button-next services-next"></div>
 
             </div>
 
@@ -467,6 +480,7 @@ $services      = get_field('services');
     </div>
 
 </section>
+
 
 <?php
 

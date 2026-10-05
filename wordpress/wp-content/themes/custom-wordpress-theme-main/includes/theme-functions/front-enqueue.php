@@ -61,6 +61,19 @@ function theme_front_assets()
 
     /*
     |--------------------------------------------------------------------------
+    | Swiper CSS - CDN
+    |--------------------------------------------------------------------------
+    */
+    wp_enqueue_style(
+        'swiper',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11'
+    );
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Main Theme CSS
     |--------------------------------------------------------------------------
     */
@@ -77,7 +90,8 @@ function theme_front_assets()
             'bootstrap',
             'fontawesome',
             'google-fonts',
-            'fancybox'
+            'fancybox',
+            'swiper'
         ),
         $theme_css_ver,
         'screen'
@@ -119,13 +133,12 @@ function theme_front_assets()
         true
     );
 
-    wp_enqueue_style(
-    'swiper',
-    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
-    array(),
-    '11'
-    );
 
+    /*
+    |--------------------------------------------------------------------------
+    | Swiper JS - CDN
+    |--------------------------------------------------------------------------
+    */
     wp_enqueue_script(
         'swiper',
         'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
@@ -139,11 +152,17 @@ function theme_front_assets()
     |--------------------------------------------------------------------------
     | Custom JS
     |--------------------------------------------------------------------------
+    |
+    | Swiper is included as a dependency so it loads before custom.js.
+    |
     */
     wp_enqueue_script(
         'custom-js',
         THEME_JS . 'custom.js',
-        array('fancybox'),
+        array(
+            'fancybox',
+            'swiper'
+        ),
         '1.0.0',
         true
     );

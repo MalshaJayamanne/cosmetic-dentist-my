@@ -250,8 +250,8 @@ document.addEventListener("DOMContentLoaded", function () {
         loop: true,
 
         autoplay: {
-          delay: 5000,
-          disableOnInteraction: true,
+            delay: 3000,
+            disableOnInteraction: false,
         },
 
         slidesPerView: {
@@ -279,130 +279,181 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
   }
+
 /*
  * =========================================================
- * EXPERTS / DOCTORS SWIPER
+ * HOME SERVICES CARDS SWIPER
  * =========================================================
  */
 
-const doctorsSwiperElement =
-  document.getElementById("doctors-main-swiper");
+if (document.querySelector(".services-swiper")) {
 
-const expertTabs =
-  document.querySelectorAll(".expert-tab");
+    new Swiper(".services-swiper", {
 
+        slidesPerView: 1,
 
-if (
-  doctorsSwiperElement &&
-  expertTabs.length > 0 &&
-  typeof Swiper !== "undefined"
-) {
+        spaceBetween: 16,
+
+        speed: 500,
+
+        loop: true,
+
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+        },
+
+        allowTouchMove: true,
+
+        watchOverflow: false,
+
+        navigation: {
+            nextEl: ".services-next",
+            prevEl: ".services-prev",
+        },
+
+        breakpoints: {
+
+            768: {
+                slidesPerView: 2,
+            },
+
+            1025: {
+                slidesPerView: 3,
+            },
+
+        },
+
+    });
+
+}
+
 
   /*
-   * ---------------------------------------------------------
-   * Initialize doctor card swiper
-   * ---------------------------------------------------------
+   * =========================================================
+   * EXPERTS / DOCTORS SWIPER
+   * =========================================================
    */
 
-  const doctorsMain = new Swiper(
-    "#doctors-main-swiper",
-    {
-      slidesPerView: 1,
+  const doctorsSwiperElement =
+    document.getElementById("doctors-main-swiper");
 
-      spaceBetween: 0,
+  const expertTabs =
+    document.querySelectorAll(".expert-tab");
 
-      speed: 600,
 
-      autoHeight: true,
+  if (
+    doctorsSwiperElement &&
+    expertTabs.length > 0 &&
+    typeof Swiper !== "undefined"
+  ) {
 
-      allowTouchMove: true,
+    /*
+     * ---------------------------------------------------------
+     * Initialize doctor card swiper
+     * ---------------------------------------------------------
+     */
 
-      watchOverflow: true,
+    const doctorsMain = new Swiper(
+      "#doctors-main-swiper",
+      {
+        slidesPerView: 1,
+
+        spaceBetween: 0,
+
+        speed: 600,
+
+        autoHeight: true,
+
+        allowTouchMove: true,
+
+        watchOverflow: true,
+      }
+    );
+
+
+    /*
+     * ---------------------------------------------------------
+     * Update active doctor tab
+     * ---------------------------------------------------------
+     */
+
+    function updateExpertTab(activeIndex) {
+
+      expertTabs.forEach(function (tab, index) {
+
+        const isActive =
+          index === activeIndex;
+
+        tab.classList.toggle(
+          "active",
+          isActive
+        );
+
+        tab.setAttribute(
+          "aria-selected",
+          isActive ? "true" : "false"
+        );
+
+      });
+
     }
-  );
 
 
-  /*
-   * ---------------------------------------------------------
-   * Update active doctor tab
-   * ---------------------------------------------------------
-   */
+    /*
+     * ---------------------------------------------------------
+     * Set first doctor active
+     * ---------------------------------------------------------
+     */
 
-  function updateExpertTab(activeIndex) {
+    updateExpertTab(0);
+
+
+    /*
+     * ---------------------------------------------------------
+     * Click doctor tab
+     * ---------------------------------------------------------
+     */
 
     expertTabs.forEach(function (tab, index) {
 
-      const isActive =
-        index === activeIndex;
+      tab.addEventListener(
+        "click",
+        function () {
 
-      tab.classList.toggle(
-        "active",
-        isActive
-      );
+          if (
+            doctorsMain.activeIndex !== index
+          ) {
 
-      tab.setAttribute(
-        "aria-selected",
-        isActive ? "true" : "false"
+            doctorsMain.slideTo(index);
+
+          }
+
+        }
       );
 
     });
 
-  }
 
+    /*
+     * ---------------------------------------------------------
+     * Update tab when doctor card is swiped
+     * ---------------------------------------------------------
+     */
 
-  /*
-   * ---------------------------------------------------------
-   * Set first doctor active
-   * ---------------------------------------------------------
-   */
-
-  updateExpertTab(0);
-
-
-  /*
-   * ---------------------------------------------------------
-   * Click doctor tab
-   * ---------------------------------------------------------
-   */
-
-  expertTabs.forEach(function (tab, index) {
-
-    tab.addEventListener(
-      "click",
+    doctorsMain.on(
+      "slideChange",
       function () {
 
-        if (
-          doctorsMain.activeIndex !== index
-        ) {
-
-          doctorsMain.slideTo(index);
-
-        }
+        updateExpertTab(
+          doctorsMain.activeIndex
+        );
 
       }
     );
 
-  });
-
-
-  /*
-   * ---------------------------------------------------------
-   * Update tab when doctor card is swiped
-   * ---------------------------------------------------------
-   */
-
-  doctorsMain.on(
-    "slideChange",
-    function () {
-
-      updateExpertTab(
-        doctorsMain.activeIndex
-      );
-
-    }
-  );
-
-}
+  }
 
 
   /*
