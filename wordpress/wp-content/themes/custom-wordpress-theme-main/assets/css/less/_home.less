@@ -469,16 +469,41 @@ img {
     right: 9px;
     bottom: 14px;
     left: 9px;
+
     height: 151px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     padding: 29px;
+
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
+
     font-family: Jost, sans-serif;
     text-align: center;
+
+    box-sizing: border-box;
+
+    .welcome-review-swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-wrapper {
+        height: 100%;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+    }
 
     p {
         margin-bottom: 10px;
@@ -1165,7 +1190,7 @@ img {
 }
 
 .experts {
-    padding: 6rem 0 8rem;
+    padding: 6rem 0 6rem;
     background: #fff;
 
     .section-head {

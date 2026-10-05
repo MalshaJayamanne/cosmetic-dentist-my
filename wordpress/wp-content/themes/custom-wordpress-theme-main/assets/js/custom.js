@@ -280,6 +280,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
+  /*
+   * =========================================================
+   * WELCOME REVIEWS
+   * =========================================================
+   */
+
+  if (document.querySelector(".welcome-review-swiper")) {
+
+    new ThemeSwiper(
+      ".welcome-review-swiper",
+      {
+        loop: true,
+
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
+
+        slidesPerView: {
+          0: {
+            slidesPerView: 1,
+          },
+
+          768: {
+            slidesPerView: 1,
+          },
+
+          1025: {
+            slidesPerView: 1,
+          },
+        },
+
+        spaceBetween: 0,
+        speed: 500,
+
+        allowTouchMove: true,
+      }
+    );
+
+  }
+
 /*
  * =========================================================
  * HOME SERVICES CARDS SWIPER

@@ -1113,8 +1113,28 @@ img {
     background: rgba(0, 0, 0, 0.55);
     color: #fff;
     text-align: center;
-    padding: 29px;
-    font-family: Jost, system-ui, sans-serif;
+    padding: 15px;
+    font-family: Jost, system-ui, sans-serif;    
+    
+    box-sizing: border-box;
+}
+
+.review .welcome-review-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.review .swiper-wrapper {
+    height: 100%;
+}
+
+.review .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
 }
 
 /* =========================================================
@@ -1122,11 +1142,13 @@ img {
 ========================================================= */
 
 .rating-icons {
+    width: 100%;
     height: 15px;
     line-height: 15px;
     color: #e3cb68;
     letter-spacing: 17px;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* =========================================================
@@ -2577,7 +2599,6 @@ img {
 
 .experts {
     padding-block: 6rem;
-    padding-bottom: 8rem;
     background: #fff;
 }
 
@@ -3755,9 +3776,8 @@ img {
         minmax(0, 1fr)
         minmax(280px, 1.4fr);
 
-    gap: 20px;
+    gap: 65px;
 
-    align-items: start;
 }
 
 

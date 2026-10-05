@@ -130,7 +130,7 @@ $footer_link    = get_field('footer_link', 'option');
                         <?php if ($edm_logo) : ?>
 
                             <span class="footer-website-by">
-                                Website By
+                                &nbsp;&nbsp;Website By
                             </span>
 
                             <?php

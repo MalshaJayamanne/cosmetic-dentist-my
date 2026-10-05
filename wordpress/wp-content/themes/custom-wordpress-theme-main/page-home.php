@@ -248,8 +248,7 @@ $process_steps   = get_field('process_steps');
 <?php
 
 $welcome_image   = get_field('welcome_image');
-$welcome_review  = get_field('welcome_review');
-$reviewer_name   = get_field('reviewer_name');
+$reviews         = get_field('review');
 $welcome_content = get_field('welcome_content');
 $welcome_link    = get_field('welcome_link');
 
@@ -271,38 +270,57 @@ $welcome_link    = get_field('welcome_link');
                         <?php get_image(
                             $welcome_image,
                             'welcome',
-                            $reviewer_name ?: 'Patient review'
+                            'Patient review'
                         ); ?>
 
                     <?php endif; ?>
 
 
                     <!-- REVIEW -->
-                    <div class="review">
+                    <?php if ($reviews) : ?>
 
-                        <div class="rating-icons">
-                            ★★★★★
+                        <div class="review">
+
+                            <div class="swiper welcome-review-swiper">
+
+                                <div class="swiper-wrapper">
+
+                                    <?php foreach ($reviews as $review) : ?>
+
+                                        <div class="swiper-slide">
+
+                                            <div class="rating-icons">
+                                                ★★★★★
+                                            </div>
+
+                                            <?php if (!empty($review['text'])) : ?>
+
+                                                <p>
+                                                    <?php echo esc_html($review['text']); ?>
+                                                </p>
+
+                                            <?php endif; ?>
+
+                                            <?php if (!empty($review['name'])) : ?>
+
+                                                <h4>
+                                                    <?php echo esc_html($review['name']); ?>
+                                                </h4>
+
+                                            <?php endif; ?>
+
+                                        </div>
+
+                                    <?php endforeach; ?>
+
+                                </div>
+
+                            </div>
+
                         </div>
 
+                    <?php endif; ?>
 
-                        <?php if ($welcome_review) : ?>
-
-                            <p>
-                                <?php echo esc_html($welcome_review); ?>
-                            </p>
-
-                        <?php endif; ?>
-
-
-                        <?php if ($reviewer_name) : ?>
-
-                            <h4>
-                                <?php echo esc_html($reviewer_name); ?>
-                            </h4>
-
-                        <?php endif; ?>
-
-                    </div>
 
                 </div>
 
