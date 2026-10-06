@@ -5,14 +5,13 @@ $footer_logo       = get_field('footer_logo', 'option');
 $footer_copyright  = get_field('footer_copyright', 'option');
 $edm_logo          = get_field('edm_logo', 'option');
 
-$social          = get_field('social', 'option');
 $footer_mobile   = get_field('footer_mobile', 'option');
 $footer_email    = get_field('footer_email', 'option');
 $footer_location = get_field('footer_location', 'option');
-$schedule        = get_field('schedule', 'option');
 
 $footer_content = get_field('footer_content', 'option');
 $footer_link    = get_field('footer_link', 'option');
+
 ?>
 
 <footer class="footer">
@@ -35,9 +34,10 @@ $footer_link    = get_field('footer_link', 'option');
         <div class="footer-content">
 
 
-            <!-- =========================
-                 LEFT
-            ========================== -->
+            <!-- =====================================
+                 COLUMN 1
+                 LOGO / SOCIAL / COPYRIGHT
+            ====================================== -->
 
             <div class="footer-left">
 
@@ -58,101 +58,69 @@ $footer_link    = get_field('footer_link', 'option');
                 <?php endif; ?>
 
 
-                <?php if (!empty($social)) : ?>
+                <!-- SOCIAL MEDIA -->
 
-                    <div class="footer-social">
+                <div class="footer-social">
 
-                        <span>Follow Us</span>
+                    <span>Follow Us</span>
 
-                        <div class="footer-social-wrapper">
+                    <div class="footer-social-wrapper">
 
-                            <?php foreach ($social as $item) : ?>
+                        <?php
+                        get_template_part('templates/social', 'media');
+                        ?>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COPYRIGHT -->
+
+                <?php if ($footer_copyright || $edm_logo) : ?>
+
+                    <div class="footer-copyright">
+
+                        <p class="footer-legal">
+
+                            <?php if ($footer_copyright) : ?>
+
+                                <span>
+                                    <?php echo esc_html($footer_copyright); ?>
+                                </span>
+
+                            <?php endif; ?>
+
+
+                            <?php if ($edm_logo) : ?>
+
+                                <span class="footer-website-by">
+                                    &nbsp;&nbsp;Website By
+                                </span>
 
                                 <?php
-                                $icon = $item['icon'] ?? '';
-                                $link = $item['link'] ?? '';
-
-                                if (empty($link)) {
-                                    continue;
-                                }
-
-                                $url    = $link['url'] ?? '';
-                                $title  = $link['title'] ?? '';
-                                $target = $link['target'] ?? '_self';
-
-                                if (empty($url)) {
-                                    continue;
-                                }
+                                get_image(
+                                    $edm_logo,
+                                    'footer-edm-logo',
+                                    'EDM'
+                                );
                                 ?>
 
-                                <a
-                                    href="<?php echo esc_url($url); ?>"
-                                    target="<?php echo esc_attr($target); ?>"
-                                    <?php if ($target === '_blank') : ?>
-                                        rel="noopener noreferrer"
-                                    <?php endif; ?>
-                                    aria-label="<?php echo esc_attr($title ?: 'Social media'); ?>"
-                                >
+                            <?php endif; ?>
 
-                                    <?php if ($icon) : ?>
-
-                                        <i
-                                            class="<?php echo esc_attr($icon); ?>"
-                                            aria-hidden="true"
-                                        ></i>
-
-                                    <?php endif; ?>
-
-                                </a>
-
-                            <?php endforeach; ?>
-
-                        </div>
+                        </p>
 
                     </div>
 
                 <?php endif; ?>
 
-
-                <div class="footer-copyright">
-
-                    <p class="footer-legal">
-
-                        <?php if ($footer_copyright) : ?>
-
-                            <span>
-                                <?php echo esc_html($footer_copyright); ?>
-                            </span>
-
-                        <?php endif; ?>
-
-
-                        <?php if ($edm_logo) : ?>
-
-                            <span class="footer-website-by">
-                                &nbsp;&nbsp;Website By
-                            </span>
-
-                            <?php
-                            get_image(
-                                $edm_logo,
-                                'footer-edm-logo',
-                                'EDM'
-                            );
-                            ?>
-
-                        <?php endif; ?>
-
-                    </p>
-
-                </div>
-
             </div>
 
 
-            <!-- =========================
+            <!-- =====================================
+                 COLUMN 2
                  CONTACT
-            ========================== -->
+            ====================================== -->
 
             <div class="footer-contact-column">
 
@@ -215,13 +183,14 @@ $footer_link    = get_field('footer_link', 'option');
             </div>
 
 
-            <!-- =========================
+            <!-- =====================================
+                 COLUMN 3
                  OFFICE HOURS
-            ========================== -->
+            ====================================== -->
 
             <div class="footer-hours-column">
 
-                <?php if (!empty($schedule)) : ?>
+                <?php if (have_rows('office_hours', 'option')) : ?>
 
                     <div class="footer-item office-hours-wrapper">
 
@@ -229,30 +198,30 @@ $footer_link    = get_field('footer_link', 'option');
 
                         <ul class="office-hours">
 
-                            <?php foreach ($schedule as $day) : ?>
+                            <?php while (have_rows('office_hours', 'option')) : the_row(); ?>
 
                                 <?php
-                                $day_name  = $day['day'] ?? '';
-                                $day_hours = $day['hours'] ?? '';
-
-                                if (!$day_name && !$day_hours) {
-                                    continue;
-                                }
+                                $day  = get_sub_field('day');
+                                $time = get_sub_field('time');
                                 ?>
 
-                                <li>
+                                <?php if ($day || $time) : ?>
 
-                                    <span>
-                                        <?php echo esc_html($day_name); ?>
-                                    </span>
+                                    <li>
 
-                                    <span>
-                                        <?php echo esc_html($day_hours); ?>
-                                    </span>
+                                        <span>
+                                            <?php echo esc_html($day); ?>
+                                        </span>
 
-                                </li>
+                                        <span>
+                                            <?php echo esc_html($time); ?>
+                                        </span>
 
-                            <?php endforeach; ?>
+                                    </li>
+
+                                <?php endif; ?>
+
+                            <?php endwhile; ?>
 
                         </ul>
 
@@ -263,9 +232,10 @@ $footer_link    = get_field('footer_link', 'option');
             </div>
 
 
-            <!-- =========================
-                 CTA
-            ========================== -->
+            <!-- =====================================
+                 COLUMN 4
+                 APPOINTMENT CTA
+            ====================================== -->
 
             <div class="footer-right">
 
@@ -274,7 +244,9 @@ $footer_link    = get_field('footer_link', 'option');
                     <?php if ($footer_content) : ?>
 
                         <div class="footer-cta-content">
+
                             <?php echo wp_kses_post($footer_content); ?>
+
                         </div>
 
                     <?php endif; ?>

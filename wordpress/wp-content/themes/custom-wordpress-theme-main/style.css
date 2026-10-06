@@ -3774,10 +3774,11 @@ img {
         minmax(0, 1.2fr)
         minmax(0, 1fr)
         minmax(0, 1fr)
-        minmax(280px, 1.4fr);
+        minmax(0, 1.4fr);
 
     gap: 65px;
 
+    align-items: start;
 }
 
 
@@ -3832,6 +3833,8 @@ img {
     align-items: center;
     justify-content: center;
 
+    flex-wrap: nowrap;
+
     gap: 1rem;
 
     min-height: 40px;
@@ -3844,9 +3847,16 @@ img {
     letter-spacing: 0.15em;
 
     text-transform: uppercase;
+
+    white-space: nowrap;
 }
 
+
 .footer-social > span {
+    display: block;
+
+    flex: 0 0 auto;
+
     color: #fff;
 
     font-size: 18px;
@@ -3859,19 +3869,33 @@ img {
     white-space: nowrap;
 }
 
+
 .footer-social-wrapper {
     display: flex;
 
     align-items: center;
+    justify-content: flex-start;
+
+    flex-direction: row;
+    flex-wrap: nowrap;
 
     gap: 1rem;
+
+    flex: 0 0 auto;
+
+    white-space: nowrap;
 }
 
+
+/* Existing social-media.php links */
+
 .footer-social-wrapper a {
-    display: flex;
+    display: inline-flex;
 
     align-items: center;
     justify-content: center;
+
+    flex: 0 0 auto;
 
     width: 28px;
     height: 28px;
@@ -3885,17 +3909,20 @@ img {
         transform 0.3s ease;
 }
 
+
 .footer-social-wrapper a i {
+    display: block;
+
     font-size: 18px;
     line-height: 1;
 }
+
 
 .footer-social-wrapper a:hover {
     color: var(--gold);
 
     transform: translateY(-2px);
 }
-
 
 /* =========================================================
    COPYRIGHT
@@ -3918,6 +3945,8 @@ img {
     margin: 0;
 
     color: #fff;
+
+    font-family: Poppins, system-ui, sans-serif;
 
     font-size: 0.75rem;
     font-weight: 450;
@@ -3948,12 +3977,24 @@ img {
 
 
 /* =========================================================
-   CONTACT + HOURS COLUMNS
+   CONTACT COLUMN
 ========================================================= */
 
-.footer-contact-column,
+.footer-contact-column {
+    min-width: 0;
+
+    padding-top: 5px;
+}
+
+
+/* =========================================================
+   OFFICE HOURS COLUMN
+========================================================= */
+
 .footer-hours-column {
     min-width: 0;
+
+    padding-top: 5px;
 }
 
 
@@ -3999,6 +4040,8 @@ img {
     margin: 0;
 
     color: #fff;
+
+    font-family: Poppins, system-ui, sans-serif;
 
     font-size: 0.9rem;
 
@@ -4050,6 +4093,7 @@ img {
 
 .office-hours li span:last-child {
     white-space: nowrap;
+
     text-align: right;
 }
 
@@ -4118,7 +4162,7 @@ img {
 
 
 /* =========================================================
-   WYSIWYG CAN ALSO OUTPUT P
+   WYSIWYG P
 ========================================================= */
 
 .footer-cta-content p {
@@ -4152,11 +4196,14 @@ img {
     text-align: center;
 }
 
+
 /* =========================================================
    FOOTER - RESPONSIVE
 ========================================================= */
 
+
 /* TABLET */
+
 @media (min-width: 768px) and (max-width: 1199.98px) {
 
     .footer {
@@ -4165,8 +4212,11 @@ img {
 
     .footer-content {
         grid-template-columns: 1fr;
+
         gap: 40px;
+
         text-align: center;
+
         justify-items: center;
     }
 
@@ -4175,8 +4225,10 @@ img {
     .footer-hours-column,
     .footer-right {
         grid-column: auto;
+
         width: 100%;
         max-width: 600px;
+
         text-align: center;
     }
 
@@ -4191,6 +4243,7 @@ img {
 
     .office-hours {
         width: fit-content;
+
         margin: 0 auto;
     }
 
@@ -4204,6 +4257,7 @@ img {
 
     .footer-cta {
         margin: 0 auto;
+
         text-align: center;
     }
 
@@ -4211,24 +4265,30 @@ img {
 
 
 /* MOBILE */
+
 @media (max-width: 767.98px) {
 
     .footer {
         padding-block: 4rem;
+
         margin-top: 50px;
     }
 
     .footer-bg-image {
         width: 100%;
         height: 50%;
+
         top: auto;
         bottom: 0;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
+
         gap: 35px;
+
         text-align: center;
+
         justify-items: center;
     }
 
@@ -4237,7 +4297,9 @@ img {
     .footer-hours-column,
     .footer-right {
         grid-column: auto;
+
         width: 100%;
+
         text-align: center;
     }
 
@@ -4252,6 +4314,7 @@ img {
 
     .office-hours {
         width: fit-content;
+
         margin: 0 auto;
     }
 
@@ -4265,6 +4328,7 @@ img {
 
     .footer-cta {
         margin: 0 auto;
+
         text-align: center;
     }
 
@@ -4272,10 +4336,12 @@ img {
 
 
 /* SMALL MOBILE */
+
 @media (max-width: 575.98px) {
 
     .footer {
         padding-block: 3.5rem;
+
         margin-top: 40px;
     }
 

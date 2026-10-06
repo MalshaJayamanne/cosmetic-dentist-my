@@ -1181,3 +1181,15 @@ body.error404 {
         }
     }
 }
+.fade-color-gradient(@color, @angle) {
+    background: linear-gradient(
+        @angle,
+        fade(@color, 0%) 0%,
+        @color 80%
+    );
+}
+.fontawesome(@content) {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: @content;
+}
