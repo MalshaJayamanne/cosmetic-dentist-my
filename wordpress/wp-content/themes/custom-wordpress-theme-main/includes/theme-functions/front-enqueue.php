@@ -152,10 +152,13 @@ function theme_front_assets()
     |--------------------------------------------------------------------------
     | Custom JS
     |--------------------------------------------------------------------------
-    |
-    | Swiper is included as a dependency so it loads before custom.js.
-    |
     */
+    $custom_js_path = get_stylesheet_directory() . '/js/custom.js';
+
+    $custom_js_ver = file_exists($custom_js_path)
+        ? filemtime($custom_js_path)
+        : '1.0.0';
+
     wp_enqueue_script(
         'custom-js',
         THEME_JS . 'custom.js',
@@ -163,7 +166,7 @@ function theme_front_assets()
             'fancybox',
             'swiper'
         ),
-        '1.0.0',
+        $custom_js_ver,
         true
     );
 

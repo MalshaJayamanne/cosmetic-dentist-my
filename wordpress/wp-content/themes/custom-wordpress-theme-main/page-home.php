@@ -609,64 +609,76 @@ $testimonial_videos = $has_acf
 
         <?php if (!empty($testimonial_videos)) : ?>
 
-            <div class="video-grid">
+            <div class="testimonials-swiper swiper">
 
-                <?php foreach ($testimonial_videos as $index => $video) : ?>
+                <div class="swiper-wrapper">
 
-                    <?php
-                    $image = $video['image'] ?? '';
-                    $link  = $video['link'] ?? '';
+                    <?php foreach ($testimonial_videos as $index => $video) : ?>
 
-                    $image_id = is_array($image)
-                        ? ($image['ID'] ?? 0)
-                        : $image;
+                        <?php
+                        $image = $video['image'] ?? '';
+                        $link  = $video['link'] ?? '';
 
-                    $video_url = is_array($link)
-                        ? ($link['url'] ?? '')
-                        : $link;
+                        $image_id = is_array($image)
+                            ? ($image['ID'] ?? 0)
+                            : $image;
 
-                    if (!$video_url) {
-                        continue;
-                    }
+                        $video_url = is_array($link)
+                            ? ($link['url'] ?? '')
+                            : $link;
 
-                    $label = sprintf(
-                        'Play patient testimonial video %d',
-                        $index + 1
-                    );
-                    ?>
+                        if (!$video_url) {
+                            continue;
+                        }
 
+                        $label = sprintf(
+                            'Play patient testimonial video %d',
+                            $index + 1
+                        );
+                        ?>
 
-                    <a
-                        href="<?php echo esc_url($video_url); ?>"
-                        class="video-card"
-                        data-fancybox="testimonial-videos"
-                        aria-label="<?php echo esc_attr($label); ?>"
-                    >
+                        <div class="swiper-slide">
 
-                        <?php if ($image_id) : ?>
+                            <a
+                                href="<?php echo esc_url($video_url); ?>"
+                                class="video-card"
+                                data-fancybox="testimonial-videos"
+                                aria-label="<?php echo esc_attr($label); ?>"
+                            >
 
-                            <?php
-                            get_image(
-                                $image_id,
-                                'testimonial',
-                                ''
-                            );
-                            ?>
+                                <?php if ($image_id) : ?>
 
-                        <?php endif; ?>
+                                    <?php
+                                    get_image(
+                                        $image_id,
+                                        'testimonial',
+                                        ''
+                                    );
+                                    ?>
 
-
-                        <span
-                            class="play-button"
-                            aria-hidden="true"
-                        >
-                            <i class="fa-solid fa-play"></i>
-                        </span>
-
-                    </a>
+                                <?php endif; ?>
 
 
-                <?php endforeach; ?>
+                                <span
+                                    class="play-button"
+                                    aria-hidden="true"
+                                >
+                                    <i class="fa-solid fa-play"></i>
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    <?php endforeach; ?>
+
+                </div>
+
+
+                <!-- SWIPER NAVIGATION -->
+
+                <div class="swiper-button-prev testimonials-prev"></div>
+                <div class="swiper-button-next testimonials-next"></div>
 
             </div>
 
